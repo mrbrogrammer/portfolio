@@ -100,8 +100,24 @@
     text-transform: uppercase
     font-size: 28px
     line-height: 1.2
-    margin: 0 0 2
-  
+    margin: 0 0 20px
+
+  img
+    max-width: 100%
+    margin-bottom: 20px
+
+  .work-return
+    +size(40px)
+    cursor: pointer
+    opacity: 0.5
+    +position(absolute, -4px null null -60px)
+
+    path
+      fill: rgba(0,0,0,0.4)
+
+    &:hover
+      opacity: 1
+
 
 
 @media (max-width: 740px)
