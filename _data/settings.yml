@@ -1,9 +1,9 @@
 #-------------------------------
 # General Site Settings
 
-title: Sam Altman
+title: Simphiwe Madi
 description: Thinker // Designer // Maker
-email: samaltman@gmail.com
+email: simphiwe.madi@yahoo.com
 
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
@@ -39,7 +39,7 @@ seo:
 # NOTE: The avatar is defined in the all.sass document.
 
 blurb: >
-  **Sam specializes in making things** for human people.
+  **Simphiwe specializes in making things** for human people.
   Most of the things he makes are [digital interfaces](#){:target="_blank"},
   but he also puts effort into crafting [next-level beats](#){:target="_blank"}
   and [YouTube videos](#){:target="_blank"} about making codes happen.
