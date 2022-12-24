@@ -58,6 +58,7 @@ skills:
 
 projects:
 - {name: Zen Magazine, folder: 'proj-1', file: 'work/proj-1.html'}
+- {name: Robot Worlds, folder: 'proj-2', file: 'work/proj-2.html'}
 
 
 
