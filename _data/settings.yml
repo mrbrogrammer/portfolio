@@ -62,6 +62,7 @@ projects:
 - {name: BetterPicks, folder: 'proj-3', file: 'work/proj-3.html'}
 - {name: Animated Music Player, folder: 'proj-5', file: 'work/proj-5.html'}
 - {name: Prop, folder: 'proj-4', file: 'work/proj-4.html'}
+- {name: Email Newsletter, folder: 'proj-6', file: 'work/proj-6.html'}
 
 
 
