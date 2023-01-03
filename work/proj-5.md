@@ -1,5 +1,5 @@
 ---
-title: Fresh It Up
+title: Animated Music Player 
 ---
 
-![Fresh It Up]({{ site.github.url }}/assets/img/work/proj-5/freshitup-JieyuXiong.jpg)
+*[Project](https://mrbrogrammer.github.io/Animated-Music-Player/)*
