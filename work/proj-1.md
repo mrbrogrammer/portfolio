@@ -13,6 +13,6 @@ title: Zen Magazine
 *[Zen's First design](https://zen-developers.github.io/zendigital.github.io)*
 
 
-*[Project](https://zenmagazine.co.za)*
+*[Project](https://zenmagazine.co.za](https://zen-b78f05a1d2ca.herokuapp.com))*
 
 
