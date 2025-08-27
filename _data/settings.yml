@@ -2,7 +2,7 @@
 # General Site Settings
 
 title: Simphiwe Madi
-description: Thinker // Developer // Maker
+description: Software Developer, Software tester, and really good friend
 email: simphiwe@simphiwemadi.co.za
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
@@ -46,11 +46,11 @@ blurb: >
 
 skills:
 - {name: Soft Skills, value: '8'}
-- {name: UX/UI Design, value: '5'}
+- {name: UX/UI Design, value: '8'}
 - {name: Web Development, value: '10'}
 - {name: QA, value: '8'}
 - {name: Content marketing, value: '8'}
-- {name: DevOps, value: '6'}
+- {name: DevOps, value: '8'}
 
 #-------------------------------
 # Work Section
