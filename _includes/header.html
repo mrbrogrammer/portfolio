@@ -1,7 +1,8 @@
 <header id="header">
 
   <nav
-    <button type="submit"><i class="fa fa-download" aria-hidden="true">Resume</i>
+    <button type="submit" class="fa fa-download">
+       Resume
     </button
     {% for item in site.data.settings.menu %}
       <a href="{{ item.url }}">{{ item.name }}</a>
