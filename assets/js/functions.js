@@ -26,6 +26,10 @@ function smoothScroll (duration) {
 }
 
 
+function openResume() {
+    window.open('./assets/js/Simphiwe_Madi_CV.pdf', '_blank');
+}
+
 function workBelt() {
 
   $(".trigger").remove();
