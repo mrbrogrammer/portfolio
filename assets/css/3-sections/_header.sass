@@ -44,7 +44,7 @@ header
     span
       display: inline-block
       padding: 0.2em 0.5em
-      // border: 
+      // border:
 
   .kicker
     @extend %small-bold
@@ -52,6 +52,18 @@ header
     letter-spacing: 0.05em
     // color: white
     line-height: 1
+
+
+  [type="submit"]
+    background: $accent
+    color: white
+    font-size: 18px
+    text-transform: uppercase
+    width: 33%
+
+    &:hover
+      background: $accent-light
+
 
 @media (max-width: 640px)
   header
