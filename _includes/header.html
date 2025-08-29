@@ -1,9 +1,9 @@
 <header id="header">
 
-  <nav
-    <button type="submit"><i class="fa fa-download"></i> 
-       Resume
-    </button
+  <button type="submit"><i class="fa fa-download"></i> Resume
+  </button
+
+  <nav>
     {% for item in site.data.settings.menu %}
       <a href="{{ item.url }}">{{ item.name }}</a>
     {% endfor %}
