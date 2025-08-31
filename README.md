@@ -1,4 +1,4 @@
----
+
 
 # Simphiwe Madi Portfolio
 
@@ -6,7 +6,6 @@
 
 This project is a personal portfolio website for Simphiwe Madi. It is designed to make it easy for visitors to discover where and how I do my work, sample various types of content I’ve produced, and contact me directly. The site is built using Ruby, Jekyll, Gulp, and Sass for a modern, maintainable, and flexible workflow.
 
----
 
 ## Table of Contents
 
