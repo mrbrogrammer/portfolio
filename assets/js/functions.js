@@ -4,7 +4,8 @@ $(function() {
 	workLoad();
 	clientStuff();
 
-	setInterval(function() {$('.client-control-next').click()}, 5000);
+	// This function takes in a function and the timeout duration in miliseconds.
+	setInterval(function() {$('.client-control-next').click()}, 10000);
 
 	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
 	$(".biglink").fitText(1.5);
