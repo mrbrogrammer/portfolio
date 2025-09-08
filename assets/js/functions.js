@@ -78,7 +78,6 @@ function clientStuff() {
     $('.client-button').removeClass('active-client').eq(position).addClass('active-client');
   });
 
-
   $('.client-control-next, .client-control-prev').click(function() {
 
     var $this = $(this),
@@ -111,8 +110,10 @@ function clientStuff() {
 
   });
 
+
 }
 
+setInterval($('.client-control-next').click(), 5000);
 
 (function( $ ){
 
