@@ -4,6 +4,8 @@ $(function() {
 	workLoad();
 	clientStuff();
 
+	setInterval($('.client-control-next').click(), 5000);
+
 	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
 	$(".biglink").fitText(1.5);
 
@@ -112,8 +114,6 @@ function clientStuff() {
 
 
 }
-
-setInterval($('.client-control-next').click(), 5000);
 
 (function( $ ){
 
