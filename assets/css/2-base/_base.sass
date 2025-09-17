@@ -119,3 +119,36 @@ section:nth-child(odd)
 
   h3
     color: darken($accent-light, 10%)
+
+/* Columns
+  ------------------------------------	*/
+
+.flex
+  display: flex
+  flex-direction: rows
+
+.flex--center
+  justify-content: center
+
+.flex--space-around
+  justify-content: space-around
+
+.order-first
+  order: -1
+
+.col-1
+  max-width: 350px
+  margin: 0 10px
+  background: pink
+
+.col-2
+  max-width: 620px
+  margin: 0 10px
+  background: honeydew
+
+@media (max-width: 680px)
+  .flex
+    display: block
+
+  .col-1
+    max-width: 100%
