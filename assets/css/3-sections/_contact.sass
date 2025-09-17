@@ -3,22 +3,25 @@
   text-align: center
 
 .social-links
-  max-width: 700px
-  margin: 0px auto 50px
+  max-width: 500px
+  margin: 0px auto 20px
+  padding: 0 0 0 10px
   +display(flex)
   +justify-content(space-around)
   +flex-wrap(wrap)
 
   a
     display: block
-    //background: $accent
-    border: 2px solid $accent
-    +size(50px)
-    line-height: 50px
+    // background: $accent
+    border: 1px solid $accent
+    +size(18px)
+    line-height: 18px
     color: $accent
     border-radius: 50%
-    font-size: 28px
-    margin: 20px
+    font-size: 12px
+    text-align: center
+    justify-content: center
+    margin: 6px
     position: relative
 
 
@@ -26,9 +29,9 @@
       content: ''
       display: block
       +position(absolute, 0px 0px 0px 0px)
-      border: 2px solid $accent
+      border: 1px solid $accent
       border-radius: 50%
-      margin: -2px
+      margin: -1px
       opacity: 1
       +transition()
 

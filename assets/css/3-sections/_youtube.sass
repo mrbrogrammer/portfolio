@@ -1,0 +1,34 @@
+.section-youtube
+  flex: 1
+  margin-left: 160px
+
+  .flex
+    display: flex
+    flex-direction: rows
+
+    .flex--center
+    justify-content: center
+
+    .flex--space-around
+    justify-content: space-around
+
+// columns
+.col-1
+  max-width: 350px
+  margin: 0 10px
+  background: pink
+
+.col-2
+  max-width: 350px
+  margin: 0 10px
+  background: pink
+
+@media (max-width: 680px)
+  .section-youtube
+    margin-left: 0
+
+    .flex
+      display: block
+
+  .col-1, .col-2
+    max-width: 100%
