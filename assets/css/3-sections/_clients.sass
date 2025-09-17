@@ -1,5 +1,6 @@
 .section-clients
   position: relative
+  margin-left: 135px
 
 .clients-belt
   width: 100%
@@ -121,6 +122,9 @@
 
 
 @media (max-width: 850px)
+  .section-clients
+    margin-left: 0
+    
   .clients-logos
     +flex-wrap(wrap)
 
@@ -152,5 +156,8 @@
 
 
 @media (max-width: 600px)
+  .section-clients
+    margin-left: 0
+
   .client-controls
     display: none

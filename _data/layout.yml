@@ -4,7 +4,7 @@ animation: "bounceOut"
 
 # Images
 
-logo: ""
+logo: "logo.png"
 hero: "hero-bg.jpg"
 avatar: "simstar.jpg"
 

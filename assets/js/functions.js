@@ -4,6 +4,7 @@ let clientStuffInterval = true;
 $(function() {
 	smoothScroll(300);
 	workBelt();
+	navbar();
 	workLoad();
 	clientStuff();
 
@@ -37,6 +38,12 @@ function smoothScroll (duration) {
 
 function openResume() {
     window.open('./assets/js/Simphiwe_Madi_CV.pdf', '_blank');
+}
+
+function navbar() {
+	$(".mobile-nav-toggle").click(function() {
+		$(".mobile-nav").addClass("is-open");
+	});
 }
 
 function workBelt() {
