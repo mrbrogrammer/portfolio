@@ -2,7 +2,15 @@
   <div class="flex flex--center">
     <div class="col-50">
       <div class="article-wrap">
-        <a href="" style="background-image: url(https://fillmurray.lucidinternets.com/250/500)" class="article-thumb">
+        {% for posts in site.posts limit: 12 %}
+          <a href="{{posts.url}}" style="background-image: url(assets/img/posts/thumbnails/{{posts.thumbnail}})" class="article-thumb">
+            <div class="article-meta">
+              <div class="name">{{posts.title}}</div>
+              <div class="date">{{posts.date | date: "%b, %d, %Y"}}</div>
+            </div>
+          </a>
+        {% endfor %}
+        <!-- <a href="" style="background-image: url(https://fillmurray.lucidinternets.com/250/500)" class="article-thumb">
           <div class="article-meta">
             <div class="name">Article name</div>
             <div class="date">Jun 20, 1999</div>
@@ -67,13 +75,7 @@
             <div class="name">Article name</div>
             <div class="date">Jun 20, 1999</div>
           </div>
-        </a>
-        <a href="" style="background-image: url(https://fillmurray.lucidinternets.com/250/500)" class="article-thumb">
-          <div class="article-meta">
-            <div class="name">Article name</div>
-            <div class="date">Jun 20, 1999</div>
-          </div>
-        </a>
+        </a> -->
       </div>
     </div>
     <div class="col-50 flex flex--center order-first">
