@@ -86,12 +86,12 @@ clients:
   quote: '<p>Working alongside Simphiwe, I got to witness his deep passionate for art and sense of community, he was and remains a great friend/allay to the Wethinkcode_ content club.</p>',
   logo: 'logo1.png'}
 
-# - {avatar: 'face-sean.jpg',
-#   name: 'Siphesihle (Sean) Thomo',
-#   title: 'Software Developer',
-#   quote: '<p> I am very grateful to have had the opportunity to work with such a competent and supportive mentor. He not only provided technical expertise and support, but also challenged me to step out of my comfort zone and take on more difficult tasks. I needed to think more critically and develop my problem-solving skills by working on tasks outside my comfort zone.</p>',
-#   logo: 'logo1.png'}
-#
+- {avatar: 'face-sean.jpg',
+  name: 'Siphesihle (Sean) Thomo',
+  title: 'Software Developer',
+  quote: '<p> I am very grateful to have had the opportunity to work with such a competent and supportive mentor. He not only provided technical expertise and support, but also challenged me to step out of my comfort zone and take on more difficult tasks. I needed to think more critically and develop my problem-solving skills by working on tasks outside my comfort zone.</p>',
+  logo: 'logo1.png'}
+
 
 
 #-------------------------------
