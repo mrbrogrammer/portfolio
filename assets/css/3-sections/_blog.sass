@@ -2,6 +2,67 @@
   flex: 1
   margin-left: 160px
 
+  .col-1
+    display: flex
+    align-items: center
+
+  .article-wrap
+    +clearfix
+
+  background:
+    image: url(../img/article-bg.png)
+    repeat: repeat
+
+  .article-thumb
+    display: block
+    background:
+      image: url(https://fillmurray.lucidinternets.com/250/500)
+      size: cover
+      position: center
+    width: 25%
+    float: left
+    position: relative
+    overflow: hidden
+
+    &:after
+      content: ''
+      display: block
+      padding-top: 100%
+
+  .article-meta
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: fade-out(#c99065, 0.3)
+    color: white
+    padding: 10px
+    transform: translate(0%, 100%) scale(0.5)
+    transition: all 200ms ease-in-out
+    opacity: 0
+
+    .name
+      font-size: 18px
+
+    .date
+      font-style: italic
+
+
+  .article-thumb:hover .article-meta
+    opacity: 1
+    transform: translate(0%, 0%) scale(1)
+
+
+
 @media (max-width: 680px)
   .section-blog
     margin-left: 0
+
+    .col-1
+      display: block
+      align-items: center
+
+      .desc-wrap
+        text-align: center
+        margin-top: 50px
