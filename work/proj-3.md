@@ -8,4 +8,4 @@ BetterPicks is a web application that displays all your Spotify playlists. For t
 ![BetterPicks]({{ site.github.url }}/assets/img/work/proj-3/img2.jpg)
 
 
-*[Project](https://allthejamesnoneofthelames-b9b3489db095.herokuapp.com)*
+<a class="home-cta" markdown="1" href="http://betterpicksbucket.s3-website.eu-north-1.amazonaws.com/">View project</a>

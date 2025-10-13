@@ -7,6 +7,7 @@ $(function() {
 	navbar();
 	workLoad();
 	clientStuff();
+	setInterval(function(){blogTada()}, 4000 );
 
 	// This function takes in a function and the timeout duration in miliseconds.
 	if (clientStuffInterval) {
@@ -18,6 +19,10 @@ $(function() {
 	$(".biglink").fitText(1.5);
 
 	$('textarea').autosize();
+});
+
+$(window).scroll(function(){
+	startBlog();
 });
 
 // smoothScroll function is applied from the document ready function
@@ -36,6 +41,25 @@ function smoothScroll (duration) {
 }
 
 
+
+
+function blogTada() {
+	var randNum = Math.floor(Math.random() * $('.article-thumb').length) + 1
+
+	$('.article-thumb').eq(randNum).addClass('is-emp')
+		.siblings().removeClass('is-emp');
+}
+
+function startBlog() {
+	var wScroll = $(window).scrollTop();
+
+	if ($('.section-blog').offset().top - $(window).height() / 2 < wScroll) {
+		$('.article-thumb').each(function(i) {
+			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
+		});
+	}
+}
+
 function openResume() {
     window.open('./assets/js/Simphiwe_Madi_CV.pdf', '_blank');
 }
@@ -44,6 +68,7 @@ function navbar() {
 	$(".mobile-nav-toggle").click(function() {
 		$(".mobile-nav").addClass("is-open");
 	});
+
 }
 
 function workBelt() {

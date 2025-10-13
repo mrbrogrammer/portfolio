@@ -1,6 +1,7 @@
 # Layout settings
 
 animation: "bounceOut"
+work-thumb-animation: "textSlide"
 
 # Images
 

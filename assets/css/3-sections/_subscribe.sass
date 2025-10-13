@@ -1,7 +1,112 @@
 .section-subscribe
-  flex: 1
   margin-left: 160px
+
+  h3
+    padding: 20px
+
+  .home-lead
+    text-align: center
+
+  .col-2
+    margin-top: 20px
+    background: none
+    margin-bottom: -100px
+
+  .col-1
+    padding-left: 30px
+    font-style: italic
+    font-size: 18px
+    line-height: 1.8
+    margin-bottom: 0
+
+    p
+      margin: 0
+      color: $accent
+
+    &:first-child
+      padding-left: 0
+      padding-right: 30px
+      text-align: right
+      border-right: solid 2px  $accent
+
+    @media(max-width: 680px)
+      padding: 0 10px
+
+      &:first-child
+        padding: 0 10px
+        text-align: left
+        border: none
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    color: $accent
+
+    li:hover
+      color: $accent-light
+
+  .form-display
+    background: rgba($accent-light, 0.3)
+    border: 3px solid $accent
+    box-shadow: 0px 3px 8px rgba(black, 0.3)
+    display: flex
+    margin: 50px 0
+    display: flex
+
+    @media(max-width: 590px)
+      display: block
+
+    .mc-field-group
+      position: relative
+      flex: 2
+      width: 100%
+
+      &:first-child
+        border-right: 4px solid $accent
+
+        @media(max-width: 590px)
+          border-right: none
+          border-bottom: 4px solid $accent
+          .button
+            width: 100%
+
+    .button
+      background: $accent
+
+      @media(max-width: 590px)
+        width: 100%
+
+
+    input
+      position: relative
+      border: 0
+      background: none
+      padding: 0 5px
+      display: block
+      height: 60px
+      font-size: 18px
+
+      &:focus
+        outline: none
+
+      &[tyoe="submit"]
+        flex: 1
+        background: $accent
+        font-size: 24px
+        padding: 0 15px
+
+    label
+      color: $accent
+      position: absolute
+      z-index: 2
+      font-size: 12px
+      left: 10px
+      width: 100%
+
 
 @media (max-width: 680px)
   .section-subscribe
     margin-left: 0
+
+    .col-2
+      margin-bottom: -50px

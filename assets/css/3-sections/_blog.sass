@@ -17,7 +17,7 @@
     +clearfix
 
   background:
-    image: url(../img/article-bg.png)
+    // image: url(../img/article-bg.png)
     repeat: repeat
 
   .article-thumb
@@ -30,6 +30,17 @@
     float: left
     position: relative
     overflow: hidden
+    opacity: 0
+    transition: all 300ms ease-in-out
+
+    &.is-visible
+      opacity: 1
+
+    &.is-emp
+      animation-name: tada
+      animation-duration: 1s
+      animation-fill-mode: both
+      z-index: 1
 
     &:after
       content: ''
@@ -77,3 +88,28 @@
       .desc-wrap
         text-align: center
         margin-top: 50px
+        margin-bottom: 30px
+
+
+
+@keyframes tada
+  from
+    transform: scale3d(1, 1, 1)
+
+  10%,
+  20%
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%,
+  60%,
+  80%
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+
+  to
+    transform: scale3d(1, 1, 1)
