@@ -7,6 +7,7 @@ $(function() {
 	navbar();
 	workLoad();
 	clientStuff();
+	clientsBubbleClick();
 	setInterval(function(){blogTada()}, 4000 );
 
 	// This function takes in a function and the timeout duration in miliseconds.
@@ -24,6 +25,29 @@ $(function() {
 $(window).scroll(function(){
 	startBlog();
 });
+
+
+
+function clientsBubbleClick() {
+	// .on() is more efficient than click(), it essential triggers all the all
+	// the items or something to that extand.
+	$('.face').on('click', function() {
+		var $this = $(this),
+			faceTop = $this.position().top,
+			vertMath = -1 * (faceTop - 230);
+
+		$this.parent().css('top', + vertMath + 'px');
+
+		$(this).addClass('has-bubble-open')
+			.siblings().removeClass('has-bubble-open');
+	});
+
+	// When I click a face
+	// Get the distance of the face from its parent
+	// Move the whole container up by 115px + the count
+	// Add the is-open class rto the face, pop the ballon
+}
+
 
 // smoothScroll function is applied from the document ready function
 function smoothScroll (duration) {
@@ -115,6 +139,8 @@ function clientStuff() {
         position = $this.parent().children().index($this);
 
     $('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
+		$('.bubble').removeClass('active-client').eq(position).addClass('active-client');
+		$('.face').removeClass('active-client').eq(position).addClass('active-client');
     $('.client-logo').removeClass('active-client').eq(position).addClass('active-client');
     $('.client-button').removeClass('active-client').eq(position).addClass('active-client');
   });
@@ -134,14 +160,20 @@ function clientStuff() {
           $('.active-client').removeClass('active-client').next().addClass('active-client');
         } else {
           $('.client-unit').removeClass('active-client').first().addClass('active-client');
+					$('.bubble').removeClass('active-client').first().addClass('active-client');
+					$('.face').removeClass('active-client').first().addClass('active-client');
           $('.client-logo').removeClass('active-client').first().addClass('active-client');
           $('.client-button').removeClass('active-client').first().addClass('active-client');
         }
 
       } else {
+				var position = 3
 
-        if (position === 0) {
+        if (position === 3) {
           $('.client-unit').removeClass('active-client').last().addClass('active-client');
+					$('.bubble').removeClass('active-client').last().addClass('active-client');
+					$('.face').removeClass('active-client').last().addClass('active-client');
+					$('.client-content').removeClass('active-client').last().addClass('active-client');
           $('.client-logo').removeClass('active-client').last().addClass('active-client');
           $('.client-button').removeClass('active-client').last().addClass('active-client');
         } else {

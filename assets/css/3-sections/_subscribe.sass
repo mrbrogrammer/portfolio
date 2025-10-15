@@ -1,6 +1,10 @@
 .section-subscribe
   margin-left: 160px
 
+  form
+    max-width: 100%
+
+
   h3
     padding: 20px
 
@@ -84,10 +88,12 @@
       padding: 0 5px
       display: block
       height: 60px
-      font-size: 18px
+      font-size: 12px
+      transition: all 100ms ease-in-out
 
       &:focus
         outline: none
+        padding: 10px 0 0 10px
 
       &[tyoe="submit"]
         flex: 1
@@ -101,8 +107,7 @@
       z-index: 2
       font-size: 12px
       left: 10px
-      width: 100%
-
+      width: 100
 
 @media (max-width: 680px)
   .section-subscribe
