@@ -3,12 +3,13 @@
   margin-left: 160px
   overflow: hidden
 
-  // .home-cta
-  //   background-color: white
-  //   color: $accent-light
-  //
-  //   &:hover
-  //     color: $accent
+  .home-cta
+    background-color: $accent
+    color: white
+
+    &:hover
+      background-color: $accent-light
+
 
   .col-50
     align-items: center
@@ -19,10 +20,12 @@
     margin: -50px 0
     height: calc(100% + 100px)
     padding: 0
-    top: 0px
+    top: 800px
     position: relative
     transition: all 0.3s ease-in-out
 
+    &.launched
+      top: 0px
 
   .face
     height: 80px
@@ -237,9 +240,12 @@
     display: block
 
 
-@media (max-width: 600px)
+@media (max-width: 680px)
   .section-clients
     margin-left: 0
+
+    .home-lead
+      text-align: center
 
   .client-controls
     display: none

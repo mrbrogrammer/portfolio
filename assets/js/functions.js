@@ -24,8 +24,17 @@ $(function() {
 
 $(window).scroll(function(){
 	startBlog();
+	startClients();
 });
 
+function startClients() {
+		var wScroll = $(window).scrollTop();
+
+		if($('.section-clients').offset().top - 700 < wScroll) {
+			$('.faces').addClass('launched');
+			// setTimeout()function;
+		}
+}
 
 
 function clientsBubbleClick() {
