@@ -31,11 +31,14 @@ function startClients() {
 		var wScroll = $(window).scrollTop();
 
 		if($('.section-clients').offset().top - 700 < wScroll) {
-			$('.faces').addClass('launched');
+			if ($(window).width() > 680) {
+				$('.faces').addClass('launched');
+			} else {
+				clientNarrowStart();
+			}
 			// setTimeout()function;
 		}
 }
-
 
 function clientsBubbleClick() {
 	// .on() is more efficient than click(), it essential triggers all the all
@@ -43,12 +46,23 @@ function clientsBubbleClick() {
 	$('.face').on('click', function() {
 		var $this = $(this),
 			faceTop = $this.position().top,
-			vertMath = -1 * (faceTop - 230);
+			vertMath = -1 * (faceTop - 230),
+			faceLeft = $this.position().left,
+			horMath = 0 - faceLeft;
 
-		$this.parent().css('top', + vertMath + 'px');
-
-		$(this).addClass('has-bubble-open')
-			.siblings().removeClass('has-bubble-open');
+		if ($(window).width() > 680) {
+			$this.parent().css('top', + vertMath + 'px');
+		} else {
+			if ($this.hasClass('back-btn')) {
+				clientNarrowStart();
+			} else {
+				$this.parent().css('left', + horMath + 'px');
+			}
+		}
+		if (!$this.hasClass('back-btn')) {
+			$this.addClass('has-bubble-open')
+				.siblings().removeClass('has-bubble-open');
+		}
 	});
 
 	// When I click a face
@@ -57,6 +71,33 @@ function clientsBubbleClick() {
 	// Add the is-open class rto the face, pop the ballon
 }
 
+function clientNarrowStart() {
+	$('.faces').css({
+		'top': '280px',
+		'left': '0px',
+	});
+
+	$('.face').first().addClass('has-bubble-open')
+		.siblings().removeClass('has-bubble-open');
+}
+
+function clientWideStart() {
+	$('.faces').css({
+		'top': '0px',
+		'left': '0px',
+	});
+
+	$('.face:nth-child(3)').first().addClass('has-bubble-open')
+		.siblings().removeClass('has-bubble-open');
+}
+
+$(window).resize(function() {
+	if ($(window).width() < 680) {
+		clientNarrowStart();
+	} else {
+		clientWideStart();
+	}
+});
 
 // smoothScroll function is applied from the document ready function
 function smoothScroll (duration) {
