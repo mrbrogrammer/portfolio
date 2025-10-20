@@ -20,15 +20,21 @@
 .col-1
   background: none
   position: relative
+  min-width: 350px
   margin-top: 50px
 
 .video-strip
-  background: pink
   position: absolute
   margin: -50px 0
   top: 0
   width: 100%
   height: calc(100% + 100px)
+  background:
+    image: url(../img/video-strip.png)
+    position: center top
+    repeat: repeat-y
+    size: 70%
+
 
 @media (max-width: 680px)
   .section-youtube
