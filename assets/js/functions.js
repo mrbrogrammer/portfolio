@@ -56,7 +56,7 @@ function clientsBubbleClick() {
 	$('.face').on('click', function() {
 		var $this = $(this),
 			faceTop = $this.position().top,
-			vertMath = -1 * (faceTop - 230),
+			vertMath = -1 * (faceTop - 220),
 			faceLeft = $this.position().left,
 			horMath = 0 - faceLeft;
 
@@ -148,11 +148,20 @@ function openResume() {
     window.open('./assets/js/Simphiwe_Madi_CV.pdf', '_blank');
 }
 
+var isOpen = false;
+
 function navbar() {
 	$(".mobile-nav-toggle").click(function() {
-		$(".mobile-nav").addClass("is-open");
+		if (!isOpen) {
+			isOpen = true;
+			$(".mobile-nav").addClass("is-open");
+			$(".mobile-nav-toggle").addClass("is-open");
+		} else {
+			isOpen = false;
+			$(".mobile-nav").removeClass("is-open");
+			$(".mobile-nav-toggle").removeClass("is-open");
+		}
 	});
-
 }
 
 function workBelt() {
