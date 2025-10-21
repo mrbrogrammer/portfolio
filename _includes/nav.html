@@ -1,0 +1,43 @@
+
+
+<header class="home-wrap">
+  <div class="header-position">
+
+    <h1 class="logo">
+      sm
+    </h1>
+
+    <nav class="site-nav">
+
+      {% for item in site.data.settings.menu %}
+      <ul>
+        <li>
+          <a href="{{ item.url }}">{{ item.name }}</a>
+        </li>
+      </ul>
+      {% endfor %}
+
+    </nav>
+
+    <div class="social-links">
+      {% for link in site.data.settings.social %}
+      <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
+      {% endfor %}
+    </div>
+
+    <div class="mobile-nav-toggle">
+      <span></span>
+    </div>
+  </div>
+
+</header>
+
+<div class="mobile-nav">
+    {% for item in site.data.settings.menu %}
+    <ul>
+      <li>
+        <a href="{{ item.url }}">{{ item.name }}</a>
+      </li>
+    </ul>
+    {% endfor %}
+</div>

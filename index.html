@@ -14,28 +14,41 @@
 
   <link rel="stylesheet" href="{{ site.github.url }}/assets/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
   {% include analytics.html %}
 </head>
 <body>
 
-{% include header.html %}
+  {% include nav.html %}
 
-{% include about.html %}
+  <!-- {% include header.html %} -->
 
-{% include work.html %}
-
-{% include clients.html %}
-
-{% include contact.html %}
-
-{% include form.html %}
+  {% include about.html %}
 
 
-{% include footer.html %}
+  {% include youtube.html %}
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="{{ site.github.url }}/assets/js/functions.js"></script>
+  {% include blog.html %}
+
+
+  <!-- {% include music.html %} -->
+
+  {% include work.html %}
+
+
+
+  {% include clients.html %}
+  {% include subscribe.html %}
+
+
+  {% include contact.html %}
+
+  <!-- {% include form.html %} -->
+
+  <!-- {% include footer.html %} -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="{{ site.github.url }}/assets/js/functions.js"></script>
 </body>
 </html>

@@ -1,4 +1,11 @@
+.section-about
+  margin-left: 160px
+
+.about-me
+  margin-top: 0
+
 .face-lockup
+  margin-left: 135px
   max-width: 780px
   +display(flex)
   margin: 0 auto
@@ -17,6 +24,7 @@
     +size(100px)
     background: $bgcolor
     border-radius: 50%
+    transition: all 200ms ease-in-out
 
     path
       fill: $accent
@@ -30,7 +38,13 @@
     &.icon-video
       +order(5)
 
-@media screen and (max-width: 650px)
+@media screen and (max-width: 940px)
+  .skill-lockup
+    .skill-unit
+      width: 240px
+      justify-content: flex-end
+
+
   .face-lockup
     display: block
     text-align: center
@@ -46,7 +60,31 @@
       margin: 0 auto 30px
 
     [class^="icon-"]
-      margin: 10px 9%
+      margin: 10px 2%
+      transition: all 200ms ease-in-out
+
+
+
+@media screen and (max-width: 680px)
+  .section-about
+    margin-left: 0
+
+  .face-lockup
+    display: block
+    text-align: center
+
+    div
+      display: inline-block
+
+    .face-img
+      display: block
+      background:
+        position: center center
+        repeat: no-repeat
+      margin: 0 auto 30px
+
+    [class^="icon-"]
+      margin: 10px 10%
 
 
 
@@ -69,7 +107,8 @@
 
 
   .skill-unit
-    width: 270px
+    margin-left: 10px
+    width: 250px
     float: left
 
   .skill-icons
@@ -103,6 +142,9 @@
 
 
 @media screen and (max-width: 541px)
+  .face-lockup
+    margin-left: 0
+
   .skill-lockup
     width: 220px
 

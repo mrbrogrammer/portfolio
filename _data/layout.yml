@@ -1,10 +1,11 @@
 # Layout settings
 
 animation: "bounceOut"
+work-thumb-animation: "textSlide"
 
 # Images
 
-logo: ""
+logo: "logo.svg"
 hero: "hero-bg.jpg"
 avatar: "simstar.jpg"
 

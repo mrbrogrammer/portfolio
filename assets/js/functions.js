@@ -4,8 +4,11 @@ let clientStuffInterval = true;
 $(function() {
 	smoothScroll(300);
 	workBelt();
+	navbar();
 	workLoad();
 	clientStuff();
+	clientsBubbleClick();
+	setInterval(function(){blogTada()}, 4000 );
 
 	// This function takes in a function and the timeout duration in miliseconds.
 	if (clientStuffInterval) {
@@ -17,6 +20,93 @@ $(function() {
 	$(".biglink").fitText(1.5);
 
 	$('textarea').autosize();
+});
+
+$(window).scroll(function(){
+	youtubeVidScroll();
+});
+
+function youtubeVidScroll(){
+	var wScroll = $(window).scrollTop();
+
+$('.video-strip').css('background-position','center -'+ wScroll + 'px');
+}
+
+$(window).scroll(function(){
+	startBlog();
+	startClients();
+});
+
+function startClients() {
+		var wScroll = $(window).scrollTop();
+
+		if($('.section-clients').offset().top - 700 < wScroll) {
+			if ($(window).width() > 680) {
+				$('.faces').addClass('launched');
+			} else {
+				clientNarrowStart();
+			}
+			// setTimeout()function;
+		}
+}
+
+function clientsBubbleClick() {
+	// .on() is more efficient than click(), it essential triggers all the all
+	// the items or something to that extand.
+	$('.face').on('click', function() {
+		var $this = $(this),
+			faceTop = $this.position().top,
+			vertMath = -1 * (faceTop - 220),
+			faceLeft = $this.position().left,
+			horMath = 0 - faceLeft;
+
+		if ($(window).width() > 680) {
+			$this.parent().css('top', + vertMath + 'px');
+		} else {
+			if ($this.hasClass('back-btn')) {
+				clientNarrowStart();
+			} else {
+				$this.parent().css('left', + horMath + 'px');
+			}
+		}
+		if (!$this.hasClass('back-btn')) {
+			$this.addClass('has-bubble-open')
+				.siblings().removeClass('has-bubble-open');
+		}
+	});
+
+	// When I click a face
+	// Get the distance of the face from its parent
+	// Move the whole container up by 115px + the count
+	// Add the is-open class rto the face, pop the ballon
+}
+
+function clientNarrowStart() {
+	$('.faces').css({
+		'top': '280px',
+		'left': '0px',
+	});
+
+	$('.face').first().addClass('has-bubble-open')
+		.siblings().removeClass('has-bubble-open');
+}
+
+function clientWideStart() {
+	$('.faces').css({
+		'top': '0px',
+		'left': '0px',
+	});
+
+	$('.face:nth-child(3)').first().addClass('has-bubble-open')
+		.siblings().removeClass('has-bubble-open');
+}
+
+$(window).resize(function() {
+	if ($(window).width() < 680) {
+		clientNarrowStart();
+	} else {
+		clientWideStart();
+	}
 });
 
 // smoothScroll function is applied from the document ready function
@@ -35,8 +125,43 @@ function smoothScroll (duration) {
 }
 
 
+
+
+function blogTada() {
+	var randNum = Math.floor(Math.random() * $('.article-thumb').length) + 1
+
+	$('.article-thumb').eq(randNum).addClass('is-emp')
+		.siblings().removeClass('is-emp');
+}
+
+function startBlog() {
+	var wScroll = $(window).scrollTop();
+
+	if ($('.section-blog').offset().top - $(window).height() / 2 < wScroll) {
+		$('.article-thumb').each(function(i) {
+			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
+		});
+	}
+}
+
 function openResume() {
     window.open('./assets/js/Simphiwe_Madi_CV.pdf', '_blank');
+}
+
+var isOpen = false;
+
+function navbar() {
+	$(".mobile-nav-toggle").click(function() {
+		if (!isOpen) {
+			isOpen = true;
+			$(".mobile-nav").addClass("is-open");
+			$(".mobile-nav-toggle").addClass("is-open");
+		} else {
+			isOpen = false;
+			$(".mobile-nav").removeClass("is-open");
+			$(".mobile-nav-toggle").removeClass("is-open");
+		}
+	});
 }
 
 function workBelt() {
@@ -83,6 +208,8 @@ function clientStuff() {
         position = $this.parent().children().index($this);
 
     $('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
+		$('.bubble').removeClass('active-client').eq(position).addClass('active-client');
+		$('.face').removeClass('active-client').eq(position).addClass('active-client');
     $('.client-logo').removeClass('active-client').eq(position).addClass('active-client');
     $('.client-button').removeClass('active-client').eq(position).addClass('active-client');
   });
@@ -102,14 +229,20 @@ function clientStuff() {
           $('.active-client').removeClass('active-client').next().addClass('active-client');
         } else {
           $('.client-unit').removeClass('active-client').first().addClass('active-client');
+					$('.bubble').removeClass('active-client').first().addClass('active-client');
+					$('.face').removeClass('active-client').first().addClass('active-client');
           $('.client-logo').removeClass('active-client').first().addClass('active-client');
           $('.client-button').removeClass('active-client').first().addClass('active-client');
         }
 
       } else {
+				var position = 3
 
-        if (position === 0) {
+        if (position === 3) {
           $('.client-unit').removeClass('active-client').last().addClass('active-client');
+					$('.bubble').removeClass('active-client').last().addClass('active-client');
+					$('.face').removeClass('active-client').last().addClass('active-client');
+					$('.client-content').removeClass('active-client').last().addClass('active-client');
           $('.client-logo').removeClass('active-client').last().addClass('active-client');
           $('.client-button').removeClass('active-client').last().addClass('active-client');
         } else {
