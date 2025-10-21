@@ -1,6 +1,14 @@
 <section class="section-blog">
   <div class="flex flex--center">
-    <div class="col-50">
+    <div class="col-50 flex flex--center">
+      <div class="col-1">
+        <div class="desc-wrap">
+          <p class="home-lead outdented">Gaming and coding articles</p>
+          <a class="home-cta" href="#">See all articles</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-50 order-first">
       <div class="article-wrap">
         {% for posts in site.posts limit: 12 %}
           <a href="{{posts.url}}" style="background-image: url(assets/img/posts/thumbnails/{{posts.thumbnail}})" class="article-thumb">
@@ -12,13 +20,6 @@
         {% endfor %}
       </div>
     </div>
-    <div class="col-50 flex flex--center order-first">
-      <div class="col-1">
-        <div class="desc-wrap">
-          <p class="home-lead outdented">Gaming and coding articles</p>
-          <a class="home-cta" href="#">See all articles</a>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
