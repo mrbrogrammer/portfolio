@@ -76,13 +76,12 @@
   // min-height: 100vh
 .mobile-nav
   display: none
-  position: fixed
+  position: absolute
   width: 100%
   background: #eee
   padding: 30px 0 20px
   transform: translateY(-100%)
-  transition: all 150ms linear
-  z-index: 2
+  transition: all 0.3s ease-in-out
 
   ul
     list-style: none
@@ -223,10 +222,8 @@ header
 
   .mobile-nav.is-open
     display: block
-    margin-top: 100px
-    height: 100%
     transform: translateY(0%)
-    transition: all 150ms linear
+    transition: all 0.3s ease-in-out
 
   header
     width: auto
@@ -237,17 +234,13 @@ header
       display: none
 
     .header-position
-      width: 100%
-      position: fixed
-      margin-left: -10px
+      width: auto
+      position: relative
       top: auto
       bottom: auto
       left: auto
       flex-direction: row
       align-items: center
-      transition: all 150ms linear
-      z-index: 2
-
 
     .site-nav, .copyright
       display: none
@@ -257,7 +250,6 @@ header
       width: 36px
 
     .mobile-nav-toggle
-      padding: 10px
       display: flex
 
 
