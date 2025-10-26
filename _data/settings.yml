@@ -9,8 +9,8 @@ email: simphiwe@simphiwemadi.co.za
 menu:
 - {name: About, url: '#about'}
 - {name: YouTube, url: '#youtube'}
-- {name: Work, url: '#work'}
 - {name: Blog, url: '#blog'}
+- {name: Work, url: '#work'}
 - {name: Reviews, url: '#reviews'}
 - {name: Notes, url: '#notes'}
 - {name: Contact, url: '#contact'}
