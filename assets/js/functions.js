@@ -40,7 +40,7 @@ $(window).scroll(function(){
 function startClients() {
 		var wScroll = $(window).scrollTop();
 
-		if($('.section-clients').offset().top - 700 < wScroll) {
+		if($('#reviews').offset().top - 700 < wScroll) {
 			if ($(window).width() > 680) {
 				$('.faces').addClass('launched');
 			} else {
