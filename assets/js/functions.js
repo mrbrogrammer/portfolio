@@ -118,9 +118,13 @@ function smoothScroll (duration) {
 	    if( target.length ) {
 	        event.preventDefault();
 	        $('html, body').animate({
-	            scrollTop: target.offset().top
+	            scrollTop: target.offset().top - 100
 	        }, duration);
+
 	    }
+			$('.mobile-nav').removeClass('is-open');
+			$('.mobile-nav-toggle').removeClass('is-open');
+			isOpen = true;
 	});
 }
 
@@ -152,6 +156,7 @@ var isOpen = false;
 
 function navbar() {
 	$(".mobile-nav-toggle").click(function() {
+		$(".mobile-nav").hasClass("is-open") ? isOpen = true : isOpen = false;
 		if (!isOpen) {
 			isOpen = true;
 			$(".mobile-nav").addClass("is-open");
@@ -161,7 +166,9 @@ function navbar() {
 			$(".mobile-nav").removeClass("is-open");
 			$(".mobile-nav-toggle").removeClass("is-open");
 		}
+		console.log("After: " + isOpen);
 	});
+
 }
 
 function workBelt() {
