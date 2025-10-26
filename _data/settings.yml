@@ -7,13 +7,12 @@ email: simphiwe@simphiwemadi.co.za
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
-- {name: About, url: '#about-me'}
-- {name: YouTube, url: '#work'}
+- {name: About, url: '#about'}
+- {name: YouTube, url: '#youtube'}
+- {name: Blog, url: '#blog'}
 - {name: Work, url: '#work'}
-
-- {name: Blog, url: '#contact'}
-- {name: Music, url: '#contact'}
-- {name: Reviews, url: '#clients'}
+- {name: Reviews, url: '#reviews'}
+- {name: Notes, url: '#notes'}
 - {name: Contact, url: '#contact'}
 
 #-------------------------------

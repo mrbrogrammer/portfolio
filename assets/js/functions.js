@@ -40,7 +40,7 @@ $(window).scroll(function(){
 function startClients() {
 		var wScroll = $(window).scrollTop();
 
-		if($('.section-clients').offset().top - 700 < wScroll) {
+		if($('#reviews').offset().top - 700 < wScroll) {
 			if ($(window).width() > 680) {
 				$('.faces').addClass('launched');
 			} else {
@@ -118,9 +118,13 @@ function smoothScroll (duration) {
 	    if( target.length ) {
 	        event.preventDefault();
 	        $('html, body').animate({
-	            scrollTop: target.offset().top
+	            scrollTop: target.offset().top - 100
 	        }, duration);
+
 	    }
+			$('.mobile-nav').removeClass('is-open');
+			$('.mobile-nav-toggle').removeClass('is-open');
+			isOpen = true;
 	});
 }
 
@@ -137,7 +141,7 @@ function blogTada() {
 function startBlog() {
 	var wScroll = $(window).scrollTop();
 
-	if ($('.section-blog').offset().top - $(window).height() / 2 < wScroll) {
+	if ($('#blog').offset().top - $(window).height() / 2 < wScroll) {
 		$('.article-thumb').each(function(i) {
 			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
 		});
@@ -152,6 +156,7 @@ var isOpen = false;
 
 function navbar() {
 	$(".mobile-nav-toggle").click(function() {
+		$(".mobile-nav").hasClass("is-open") ? isOpen = true : isOpen = false;
 		if (!isOpen) {
 			isOpen = true;
 			$(".mobile-nav").addClass("is-open");
@@ -161,7 +166,9 @@ function navbar() {
 			$(".mobile-nav").removeClass("is-open");
 			$(".mobile-nav-toggle").removeClass("is-open");
 		}
+		console.log("After: " + isOpen);
 	});
+
 }
 
 function workBelt() {

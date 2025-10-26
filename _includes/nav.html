@@ -1,5 +1,4 @@
 
-
 <header class="home-wrap">
   <div class="header-position">
 
@@ -32,7 +31,7 @@
 
 </header>
 
-<div class="mobile-nav">
+<nav class="site-nav mobile-nav header-position">
     {% for item in site.data.settings.menu %}
     <ul>
       <li>
@@ -40,4 +39,9 @@
       </li>
     </ul>
     {% endfor %}
-</div>
+    <div class="social-links">
+      {% for link in site.data.settings.social %}
+      <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
+      {% endfor %}
+    </div>
+</nav>
