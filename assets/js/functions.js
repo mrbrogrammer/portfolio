@@ -305,7 +305,7 @@ $(document).ready(function() {
                     </iframe>
                 `;
 
-								$placeholder.removeClass('loading');
+								// $placeholder.removeClass('loading');
                 $placeholder.html(iframe);
 
                 // Monitor iframe load
@@ -368,11 +368,11 @@ $(document).ready(function() {
         const $this = $(this);
 
         // Prevent multiple clicks
-        if ($this.hasClass('loading')) {
-            return;
-        }
+        // if ($this.hasClass('loading')) {
+        //     return;
+        // }
 
-        $this.addClass('loading');
+        // $this.addClass('loading');
         loadYouTubeVideo($this);
     });
 
