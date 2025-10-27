@@ -264,6 +264,148 @@ function clientStuff() {
 
 }
 
+
+$(document).ready(function() {
+    // Configuration
+    const CONFIG = {
+        maxRetries: 3,
+        retryDelay: 2000, // milliseconds
+        loadTimeout: 10000 // 10 seconds timeout
+    };
+
+    // Function to load YouTube iframe
+    function loadYouTubeVideo($placeholder, retryCount = 0) {
+        const videoId = $placeholder.data('video-id');
+        const maxRetries = $placeholder.data('max-retries') || CONFIG.maxRetries;
+
+        // Show loading state
+        $placeholder.html(`
+            <div class="loading">
+                <div class="loader"></div>
+                <div>Loading video...</div>
+                ${retryCount > 0 ? `<div style="font-size: 14px; margin-top: 10px;">Retry attempt ${retryCount}</div>` : ''}
+            </div>
+        `);
+
+        // Simulate checking if YouTube is accessible via Ajax
+        $.ajax({
+            url: `https://img.youtube.com/vi/${videoId}/0.jpg`,
+            type: 'HEAD',
+            timeout: CONFIG.loadTimeout,
+            success: function() {
+                // YouTube is accessible, load the iframe
+                const iframe = `
+                    <iframe
+                        class="video-iframe"
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+								$placeholder.removeClass('loading');
+                $placeholder.html(iframe);
+
+                // Monitor iframe load
+                const $iframe = $placeholder.find('iframe');
+                const iframeLoadTimeout = setTimeout(function() {
+                    handleLoadError($placeholder, retryCount, maxRetries);
+                }, CONFIG.loadTimeout);
+
+                $iframe.on('load', function() {
+                    clearTimeout(iframeLoadTimeout);
+                    console.log('Video loaded successfully');
+                });
+            },
+            error: function(xhr, status, error) {
+                handleLoadError($placeholder, retryCount, maxRetries);
+            }
+        });
+    }
+
+    // Function to handle load errors
+    function handleLoadError($placeholder, retryCount, maxRetries) {
+        retryCount++;
+
+        if (retryCount <= maxRetries) {
+            console.log(`Load failed. Retrying in ${CONFIG.retryDelay/1000} seconds... (${retryCount}/${maxRetries})`);
+
+            $placeholder.html(`
+                <div class="loading">
+                    <div class="loader"></div>
+                    <div>Connection failed. Retrying...</div>
+                    <div style="font-size: 14px; margin-top: 10px;">Attempt ${retryCount} of ${maxRetries}</div>
+                </div>
+            `);
+
+            setTimeout(function() {
+                loadYouTubeVideo($placeholder, retryCount);
+            }, CONFIG.retryDelay);
+        } else {
+            // Max retries reached, show error with manual retry option
+            showError($placeholder);
+        }
+    }
+
+    // Function to show error message
+    function showError($placeholder) {
+        const videoId = $placeholder.data('video-id');
+
+        $placeholder.html(`
+            <div class="error">
+                <div style="font-size: 48px; margin-bottom: 10px;">⚠️</div>
+                <div style="font-size: 18px; margin-bottom: 5px;">Failed to load video</div>
+                <div style="font-size: 14px; margin-bottom: 15px;">Please check your connection</div>
+                <button class="retry-button" data-video-id="${videoId}">Try Again</button>
+            </div>
+        `);
+    }
+
+    // Click handler for video placeholder (initial load)
+    $(document).on('click', '.video-placeholder', function() {
+        const $this = $(this);
+
+        // Prevent multiple clicks
+        if ($this.hasClass('loading')) {
+            return;
+        }
+
+        $this.addClass('loading');
+        loadYouTubeVideo($this);
+    });
+
+    // Click handler for retry button
+    $(document).on('click', '.retry-button', function(e) {
+        e.stopPropagation();
+        const $placeholder = $(this).closest('.video-placeholder');
+        $placeholder.removeClass('loading');
+        loadYouTubeVideo($placeholder, 0);
+    });
+
+    // Optional: Intersection Observer for automatic lazy loading when scrolling
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const $placeholder = $(entry.target);
+                    // Uncomment the line below to auto-load when scrolling into view
+                    // $placeholder.trigger('click');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '50px'
+        });
+
+        $('.video-placeholder').each(function() {
+            observer.observe(this);
+        });
+    }
+});
+
+
 (function( $ ){
 
   $.fn.fitText = function( kompressor, options ) {
