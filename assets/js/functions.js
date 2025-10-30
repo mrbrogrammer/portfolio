@@ -281,8 +281,8 @@ $(document).ready(function() {
         // Show loading state
         $placeholder.html(`
             <div class="loading">
-                <div class="loader"></div>
-                <div>Loading video...</div>
+                <div class="spinner"></div>
+                <div></div>
                 ${retryCount > 0 ? `<div style="font-size: 14px; margin-top: 10px;">Retry attempt ${retryCount}</div>` : ''}
             </div>
         `);
@@ -334,7 +334,7 @@ $(document).ready(function() {
 
             $placeholder.html(`
                 <div class="loading">
-                    <div class="loader"></div>
+                    <div class="spinner"></div>
                     <div>Connection failed. Retrying...</div>
                     <div style="font-size: 14px; margin-top: 10px;">Attempt ${retryCount} of ${maxRetries}</div>
                 </div>
