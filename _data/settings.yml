@@ -2,7 +2,7 @@
 # General Site Settings
 
 title: Simphiwe Madi
-description: Software Developer, Software tester, and really good friend
+description: Software Developer, Software tester, and a really good friend
 email: simphiwe@simphiwemadi.co.za
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
@@ -66,9 +66,6 @@ projects:
 - {name: Prop, folder: 'proj-4', file: 'work/proj-4.html'}
 - {name: Email Newsletter, folder: 'proj-6', file: 'work/proj-6.html'}
 - {name: The portfolio of Photoletso, folder: 'proj-7', file: 'work/proj-7.html'}
-
-
-
 
 
 #-------------------------------
