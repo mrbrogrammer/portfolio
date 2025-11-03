@@ -49,11 +49,11 @@ blurb: >
 
 skills:
 - {name: Soft Skills, value: '8'}
-- {name: UX/UI Design, value: '8'}
-- {name: Web Development, value: '10'}
-- {name: QA, value: '8'}
-- {name: Content marketing, value: '8'}
-- {name: DevOps, value: '8'}
+- {name: Applications Development, value: '10'}
+- {name: Quality Assurance, value: '10'}
+- {name: Graphic Design, value: '5'}
+- {name: DevOps, value: '7'}
+- {name: UX/UI Design, value: '10'}
 
 #-------------------------------
 # Work Section
