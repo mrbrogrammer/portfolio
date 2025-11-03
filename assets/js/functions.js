@@ -141,7 +141,7 @@ function blogTada() {
 function startBlog() {
 	var wScroll = $(window).scrollTop();
 
-	if ($('#blog').offset().top - $(window).height() / 2 < wScroll) {
+	if ($('#blog').offset().top - $(window).height() / 2 < wScroll + 300) {
 		$('.article-thumb').each(function(i) {
 			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
 		});
