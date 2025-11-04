@@ -1,8 +1,10 @@
 let clientStuffInterval = true;
 
+var prevSelection = $('a[href^="#about"]');
 
 $(function() {
-	smoothScroll(300);
+	console.log(prevSelection);
+	smoothScroll(300, prevSelection);
 	workBelt();
 	navbar();
 	workLoad();
@@ -110,12 +112,22 @@ $(window).resize(function() {
 });
 
 // smoothScroll function is applied from the document ready function
-function smoothScroll (duration) {
+function smoothScroll (duration, prevSelection) {
+
 	$('a[href^="#"]').on('click', function(event) {
+			prevSelection.find('div').removeClass('toggle-arrow');
+
+			console.log(prevSelection);
 
 	    var target = $( $(this).attr('href') );
 
 	    if( target.length ) {
+					prevSelection = $(this);
+
+					$(this).find('div').addClass('toggle-arrow');
+
+					console.log(prevSelection);
+
 	        event.preventDefault();
 	        $('html, body').animate({
 	            scrollTop: target.offset().top - 100

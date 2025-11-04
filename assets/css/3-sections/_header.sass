@@ -145,13 +145,29 @@ header
       li
         margin-bottom: 80px
         color: rgba(0,0,0,0.7)
+        display: inline-flex
         @extend %small-bold
 
-        &:hover
-          color: rgba(0,0,0,1)
+        // &:hover
+        //   color: rgba(0,0,0,1)
 
         &:last-child
           margin-bottom: 0
+
+        a
+          .toggle-arrow
+            position: absolute
+            // marg
+            display: flex
+            margin-left: -28px
+            height: 22px
+            width: 22px
+            background:
+                image: url(../img/arrow-right.svg)
+                position: left
+                repeat: no-repeat, no-repeat
+                size: cover
+
 
         //     a
         //       display: inline-block
