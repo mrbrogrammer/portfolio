@@ -3,8 +3,7 @@ let clientStuffInterval = true;
 var prevSelection = $('a[href^="#about"]');
 
 $(function() {
-	console.log(prevSelection);
-	smoothScroll(300, prevSelection);
+	smoothScroll(500, prevSelection);
 	workBelt();
 	navbar();
 	workLoad();
@@ -30,18 +29,17 @@ $(window).scroll(function(){
 
 function youtubeVidScroll(){
 	var wScroll = $(window).scrollTop();
-
-$('.video-strip').css('background-position','center -'+ wScroll + 'px');
+	$('.video-strip').css('background-position','center -'+ wScroll + 'px');
 }
 
 $(window).scroll(function(){
 	startBlog();
 	startClients();
+	navSelectionScroll(prevSelection);
 });
 
 function startClients() {
 		var wScroll = $(window).scrollTop();
-
 		if($('#reviews').offset().top - 700 < wScroll) {
 			if ($(window).width() > 680) {
 				$('.faces').addClass('launched');
@@ -111,28 +109,67 @@ $(window).resize(function() {
 	}
 });
 
+
+function navSelectionScroll (prevSelection) {
+	var wScroll = $(window).scrollTop();
+
+	$('a[href^="#"').find('div').removeClass('toggle-arrow');
+	// console.log(wScroll);
+
+	if($('#reviews').offset().top - 500 < wScroll && $('#notes').offset().top - 500 > wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#reviews"').find('div').addClass('toggle-arrow');
+	} else if ($('#youtube').offset().top - 500 < wScroll && $('#blog').offset().top - 500 > wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#youtube"').find('div').addClass('toggle-arrow');
+	} else if ($('#work').offset().top - 500 < wScroll && $('#reviews').offset().top - 500 > wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#work"').find('div').addClass('toggle-arrow');
+	} else if ($('#blog').offset().top - 500 < wScroll && $('#work').offset().top - 500 > wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#blog"').find('div').addClass('toggle-arrow');
+	} else if ($('#about').offset().top - 500 < wScroll && $('#youtube').offset().top - 500 > wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#about"').find('div').addClass('toggle-arrow');
+	} else if ($('#notes').offset().top - 500 < wScroll && $('#notes').offset().top - 400 > wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#notes"').find('div').addClass('toggle-arrow');
+	} else if ($('#notes').offset().top - 400 < wScroll) {
+		$('a[href^="#"').find('div').removeClass('toggle-arrow');
+
+		$('a[href^="#contact"').find('div').addClass('toggle-arrow');
+	}
+}
+
 // smoothScroll function is applied from the document ready function
 function smoothScroll (duration, prevSelection) {
-
 	$('a[href^="#"]').on('click', function(event) {
 			prevSelection.find('div').removeClass('toggle-arrow');
-
-			console.log(prevSelection);
 
 	    var target = $( $(this).attr('href') );
 
 	    if( target.length ) {
 					prevSelection = $(this);
 
-					$(this).find('div').addClass('toggle-arrow');
+					// $(this).find('div').addClass('toggle-arrow');
 
-					console.log(prevSelection);
-
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top - 100
-	        }, duration);
-
+					if (target.selector === "#notes") {
+						event.preventDefault();
+						$('html, body').animate({
+								scrollTop: target.offset().top - 400
+						}, duration);
+					} else {
+						event.preventDefault();
+						$('html, body').animate({
+								scrollTop: target.offset().top - 100
+						}, duration);
+					}
 	    }
 			$('.mobile-nav').removeClass('is-open');
 			$('.mobile-nav-toggle').removeClass('is-open');
