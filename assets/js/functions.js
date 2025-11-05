@@ -155,7 +155,7 @@ function smoothScroll (duration, prevSelection) {
 	    var target = $( $(this).attr('href') );
 
 	    if( target.length ) {
-					prevSelection = $(this);
+					// prevSelection = $(this);
 
 					// $(this).find('div').addClass('toggle-arrow');
 
