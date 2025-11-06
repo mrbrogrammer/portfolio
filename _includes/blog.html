@@ -1,13 +1,6 @@
 <section id="blog">
   <div class="flex flex--center">
-    <div class="col-50 flex flex--center">
-      <div class="col-1">
-        <div class="desc-wrap">
-          <p class="home-lead outdented">Gaming and coding articles</p>
-          <a class="home-cta" href="#">See all articles</a>
-        </div>
-      </div>
-    </div>
+
     <div class="col-50 order-first">
       <div class="article-wrap">
         {% for posts in site.posts limit: 12 %}
@@ -20,6 +13,16 @@
         {% endfor %}
       </div>
     </div>
+
+    <div class="col-50 flex flex--center">
+      <div class="col-1">
+        <div class="desc-wrap">
+          <p class="home-lead outdented">Gaming and coding articles</p>
+          <a class="home-cta" href="#">See all articles</a>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 </section>
