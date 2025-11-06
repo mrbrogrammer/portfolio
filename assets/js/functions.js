@@ -227,7 +227,9 @@ function workBelt() {
 
   $('.thumb-container label').click(function() {
     $('.work-belt').addClass("slided");
+		// $('#work').addClass("change-size");
     $('.work-container').show();
+
   });
 
   $('.work-return').click(function() {
@@ -310,8 +312,70 @@ function clientStuff() {
 
   });
 
-
 }
+
+
+// Initialize a new Lenis instance for smooth scrolling
+const lenis = new Lenis();
+
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
+
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);
+
+// use a script tag or an external JS file
+document.addEventListener("DOMContentLoaded", (event) => {
+	gsap.registerPlugin(ScrollTrigger)
+	// gsap code here!
+	//
+	// let horizontalSection = document.querySelector(".thumb-container");
+	//
+	// gsap.to(".thumb-container", {
+	// 	x: () => -(horizontalSection.scrollWidth - window.innerWidth),
+	// 	scrollTrigger: {
+	// 		trigger: ".thumb-container",
+	// 		start: "center center",
+	// 		end: () => "+=" + (horizontalSection.scrollWidth),
+	// 		pin: "#work",
+	// 		scrub: 1,
+	// 		// invalidateOnRefresh: true
+	// 	}
+	// });
+
+	// document.querySelectorAll(".thumb-unit").forEach((unit) => {
+	// 	gsap.from(unit, {
+	// 		x: 250,
+	// 		duration: 0.6,
+	// 		scrollTrigger: {
+	// 			trigger: unit,
+	// 			start: "top bottom",
+	// 			toggleActions: "play none none reverse"
+	// 		}
+	// 	});
+	// });
+	// let verticalSection = document.querySelector(".work-container");
+
+	// gsap.to(".work-container", {
+	// 	x: () => -(verticalSection.scrollHeight - window.innerHeight),
+	// 	scrollTrigger: {
+	// 		trigger: ".work-container",
+	// 		start: "center center",
+	// 		end: () => "+=" + (verticalSection.scrollHeight),
+	// 		// pin: "#work",
+	// 		scrub: 1,
+	// 		invalidateOnRefresh: true
+	// 	}
+	// });
+
+});
+
 
 
 $(document).ready(function() {
