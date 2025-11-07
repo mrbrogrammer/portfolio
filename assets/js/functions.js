@@ -405,6 +405,9 @@ function wordStuff() {
 	const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
 
 	document.fonts.ready.then(() => {
+
+		$('.blurb-section').addClass('highlight');
+
 	  gsap.set(".split", { opacity: 1 });
 
 	  const split = SplitText.create(".split", {

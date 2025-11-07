@@ -42,9 +42,9 @@ seo:
 
 blurb: >
   **Simphiwe specializes in making things** for human people.
-  Most of the things he makes are web applications,
-  but he also puts effort into crafting next-level videos
-  and blogs about making codes happen.
+  Most of the things he makes are <span class="blurb-section">web applications</span>,
+  but he also puts effort into crafting next-level <span class="blurb-section">videos</span>
+  and <span class="blurb-section">blogs</span> about making codes happen.
 
 
 skills:
