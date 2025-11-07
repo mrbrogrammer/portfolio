@@ -10,6 +10,10 @@ $(function() {
 	clientStuff();
 	clientsBubbleClick();
 	setInterval(function(){blogTada()}, 4000 );
+	wordStuff();
+	startBlog();
+	startClients();
+	navSelectionScroll(prevSelection);
 
 	// This function takes in a function and the timeout duration in miliseconds.
 	if (clientStuffInterval) {
@@ -121,8 +125,29 @@ function navSelectionScroll (prevSelection) {
 
 		$('a[href^="#reviews"').find('div').addClass('toggle-arrow');
 	} else if ($('#youtube').offset().top - 500 < wScroll && $('#blog').offset().top - 500 > wScroll) {
+		// gsap.registerPlugin(SplitText);
+		//
+		// const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
+		// gsap.set(".split", { opacity: 1 });
+		//
+	  // const split = SplitText.create(".split", {
+	  //   type: "words",
+	  //   wordsClass: "word",
+	  //   prepareText: (text, el) => {
+	  //     return [...segmenter.segment(text)].map(s => s.segment).join(String.fromCharCode(8204))
+	  //   },
+	  //   wordDelimiter: { delimiter: /\u200c/, replaceWith: " " },
+	  //   autoSplit: true,
+	  //   onSplit: (self) => {
+	  //     return gsap.from(self.words, {
+	  //       y: 50,
+	  //       opacity: 0,
+	  //       stagger: 0.1,
+	  //       ease: "back"
+	  //     });
+	  //   }
+	  // });
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#youtube"').find('div').addClass('toggle-arrow');
 	} else if ($('#work').offset().top - 500 < wScroll && $('#reviews').offset().top - 500 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
@@ -190,7 +215,8 @@ function blogTada() {
 function startBlog() {
 	var wScroll = $(window).scrollTop();
 
-	if ($('#blog').offset().top - $(window).height() / 2 < wScroll) {
+	if ($('#blog').offset().top - $(window).height() / 2 - 500 < wScroll) {
+		// wordStuff();
 		$('.article-thumb').each(function(i) {
 			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
 		});
@@ -255,9 +281,6 @@ function  workLoad() {
   });
 
 }
-
-
-
 
 function clientStuff() {
 
@@ -376,6 +399,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 });
 
+function wordStuff() {
+	gsap.registerPlugin(SplitText);
+
+	const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
+
+	document.fonts.ready.then(() => {
+	  gsap.set(".split", { opacity: 1 });
+
+	  const split = SplitText.create(".split", {
+	    type: "words",
+	    wordsClass: "word",
+	    prepareText: (text, el) => {
+	      return [...segmenter.segment(text)].map(s => s.segment).join(String.fromCharCode(8204))
+	    },
+	    wordDelimiter: { delimiter: /\u200c/, replaceWith: " " },
+	    autoSplit: true,
+	    onSplit: (self) => {
+	      return gsap.from(self.words, {
+	        y: 50,
+	        opacity: 0,
+	        stagger: 0.1,
+	        ease: "back"
+	      });
+	    }
+	  });
+	});
+}
 
 
 $(document).ready(function() {
