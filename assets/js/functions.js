@@ -1,5 +1,5 @@
 let clientStuffInterval = true;
-
+let wordStuffOnYoutubeScroll = true;
 var prevSelection = $('a[href^="#about"]');
 
 $(function() {
@@ -13,7 +13,7 @@ $(function() {
 	wordStuff();
 	startBlog();
 	startClients();
-	navSelectionScroll(prevSelection);
+	navSelectionScroll(prevSelection, wordStuffOnYoutubeScroll);
 
 	// This function takes in a function and the timeout duration in miliseconds.
 	if (clientStuffInterval) {
@@ -176,7 +176,7 @@ function smoothScroll (duration, prevSelection) {
 						}, duration);
 					}
 	    }
-			$('.mobile-nav').removeClass('is-open');
+			$('.mobile-header-position').removeClass('is-open');
 			$('.mobile-nav-toggle').removeClass('is-open');
 			isOpen = true;
 	});
@@ -192,11 +192,14 @@ function blogTada() {
 		.siblings().removeClass('is-emp');
 }
 
-function startBlog() {
+function startBlog(wordStuffOnScroll) {
 	var wScroll = $(window).scrollTop();
 
 	if ($('#blog').offset().top - $(window).height() / 2 - 500 < wScroll) {
-		// wordStuff();
+		if (wordStuffOnScroll) {
+			wordStuff();
+		}
+
 		$('.article-thumb').each(function(i) {
 			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
 		});
@@ -211,14 +214,14 @@ var isOpen = false;
 
 function navbar() {
 	$(".mobile-nav-toggle").click(function() {
-		$(".mobile-nav").hasClass("is-open") ? isOpen = true : isOpen = false;
+		$(".mobile-header-position").hasClass("is-open") ? isOpen = true : isOpen = false;
 		if (!isOpen) {
 			isOpen = true;
-			$(".mobile-nav").addClass("is-open");
+			$(".mobile-header-position").addClass("is-open");
 			$(".mobile-nav-toggle").addClass("is-open");
 		} else {
 			isOpen = false;
-			$(".mobile-nav").removeClass("is-open");
+			$(".mobile-header-position").removeClass("is-open");
 			$(".mobile-nav-toggle").removeClass("is-open");
 		}
 		console.log("After: " + isOpen);

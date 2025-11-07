@@ -74,16 +74,17 @@
 .home-wrap
   // display: flex
   // min-height: 100vh
-.mobile-nav
+.mobile-header-position
   display: none
+  z-index: 2
   position: relative
   width: 100%
   background: white
   padding: 30px 0 20px
-  z-index: 2
   transition: all 0.3s ease-in-out
-  overflow: hidden
 
+
+.mobile-nav
   ul
     list-style: none
     margin: 0
@@ -92,7 +93,7 @@
     li
       text-align: center
       // margin-bottom: 12px
-      margin-bottom: 40px
+      margin-bottom: 24px
       color: rgba(0,0,0,0.7)
       color: #666
       font-size: 28px
@@ -108,19 +109,21 @@
         color: #666
         cursor: pointer
         transition: all 0.3s cubic-bezier(0, 0.53, 0.34, 1.5)
+        justify-items: center
+
         &.toggle-section
           color: $accent
 
         .toggle-arrow
+          justify-content: center
           position: absolute
           display: flex
-          margin-left: -28px
-          height: 22px
-          width: 22px
-          // transition: all 0.1ms ease-in-out
+          margin-left: 24px
+          height: 40px
+          width: 40px
           background:
               image: url(../img/arrow-right.svg)
-              position: left
+              position: center
               repeat: no-repeat, no-repeat
               size: cover
 
@@ -207,7 +210,7 @@ header
             margin-left: -28px
             height: 22px
             width: 22px
-            // transition: all 0.1ms ease-in-out
+            // transition: all 0.3s cubic-bezier(0, 0.53, 0.34, 1.5)
             background:
                 image: url(../img/arrow-right.svg)
                 position: left
@@ -284,21 +287,25 @@ header
 
 
 @media (max-width: 680px)
-
-  .mobile-nav.is-open
+  .mobile-header-position.is-open
     padding: 0
     height: 100%
     position: fixed
     margin-top: 100px
-    display: block
+    display: flex
+    flex-direction: column
     transform: translateY(0%)
     transition: all 0.3s ease-in-out
     font-size: 14px
     font-weight: 700
     text-transform: uppercase
-    overflow: hidden
+    justify-content: space-between
+
+    .mobile-nav
+
     .social-links
-      width: 400px
+      width: 100%
+      // display: block
 
   header
     width: auto

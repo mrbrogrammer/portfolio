@@ -34,17 +34,23 @@
 
 </header>
 
-<nav class="site-nav mobile-nav header-position">
+<div class="mobile-header-position">
+
+  <nav class="mobile-nav">
     {% for item in site.data.settings.menu %}
-    <ul>
-      <li>
-        <a href="{{ item.url }}">{{ item.name }}</a>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <a href="{{ item.url }}">
+            <div class="{% if forloop.index == 1 %}toggle-arrow{% endif %}"></div>
+            {{ item.name }}
+          </a>
+        </li>
+      </ul>
     {% endfor %}
-    <div class="social-links">
-      {% for link in site.data.settings.social %}
+  </nav>
+  <div class="social-links">
+    {% for link in site.data.settings.social %}
       <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
-      {% endfor %}
-    </div>
-</nav>
+    {% endfor %}
+  </div>
+</div>
