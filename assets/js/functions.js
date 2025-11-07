@@ -118,57 +118,36 @@ function navSelectionScroll (prevSelection) {
 	var wScroll = $(window).scrollTop();
 
 	$('a[href^="#"').find('div').removeClass('toggle-arrow');
-	// console.log(wScroll);
+	$('a[href^="#"').removeClass('toggle-section');
 
 	if($('#reviews').offset().top - 500 < wScroll && $('#notes').offset().top - 500 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#reviews"').find('div').addClass('toggle-arrow');
+		$('a[href^="#reviews"').addClass('toggle-section');
 	} else if ($('#youtube').offset().top - 500 < wScroll && $('#blog').offset().top - 500 > wScroll) {
-		// gsap.registerPlugin(SplitText);
-		//
-		// const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
-		// gsap.set(".split", { opacity: 1 });
-		//
-	  // const split = SplitText.create(".split", {
-	  //   type: "words",
-	  //   wordsClass: "word",
-	  //   prepareText: (text, el) => {
-	  //     return [...segmenter.segment(text)].map(s => s.segment).join(String.fromCharCode(8204))
-	  //   },
-	  //   wordDelimiter: { delimiter: /\u200c/, replaceWith: " " },
-	  //   autoSplit: true,
-	  //   onSplit: (self) => {
-	  //     return gsap.from(self.words, {
-	  //       y: 50,
-	  //       opacity: 0,
-	  //       stagger: 0.1,
-	  //       ease: "back"
-	  //     });
-	  //   }
-	  // });
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
 		$('a[href^="#youtube"').find('div').addClass('toggle-arrow');
+		$('a[href^="#youtube"').addClass('toggle-section');
 	} else if ($('#work').offset().top - 500 < wScroll && $('#reviews').offset().top - 500 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#work"').find('div').addClass('toggle-arrow');
+		$('a[href^="#work"').addClass('toggle-section');
 	} else if ($('#blog').offset().top - 500 < wScroll && $('#work').offset().top - 500 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#blog"').find('div').addClass('toggle-arrow');
+		$('a[href^="#blog"').addClass('toggle-section');
 	} else if ($('#about').offset().top - 500 < wScroll && $('#youtube').offset().top - 500 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#about"').find('div').addClass('toggle-arrow');
+		$('a[href^="#about"').addClass('toggle-section');
 	} else if ($('#notes').offset().top - 500 < wScroll && $('#notes').offset().top - 400 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#notes"').find('div').addClass('toggle-arrow');
+		$('a[href^="#notes"').addClass('toggle-section');
 	} else if ($('#notes').offset().top - 400 < wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
-
 		$('a[href^="#contact"').find('div').addClass('toggle-arrow');
+		$('a[href^="#contact"').addClass('toggle-section');
 	}
 }
 
@@ -176,6 +155,7 @@ function navSelectionScroll (prevSelection) {
 function smoothScroll (duration, prevSelection) {
 	$('a[href^="#"]').on('click', function(event) {
 			prevSelection.find('div').removeClass('toggle-arrow');
+			prevSelection.removeClass('toggle-section');
 
 	    var target = $( $(this).attr('href') );
 
