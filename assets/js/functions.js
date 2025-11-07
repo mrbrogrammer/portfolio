@@ -517,9 +517,9 @@ $(document).ready(function() {
         const $this = $(this);
 
         // Prevent multiple clicks
-        // if ($this.hasClass('loading')) {
-        //     return;
-        // }
+        if ($this.hasClass('loading')) {
+            return;
+        }
 
         // $this.addClass('loading');
         loadYouTubeVideo($this);
