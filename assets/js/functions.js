@@ -1,10 +1,11 @@
 let clientStuffInterval = true;
 let wordStuffOnYoutubeScroll = true;
 var prevSelection = $('a[href^="#about"]');
+let showWork = true;
 
 $(function() {
 	smoothScroll(500, prevSelection);
-	workBelt();
+	workBelt(showWork);
 	navbar();
 	workLoad();
 	clientStuff();
@@ -230,18 +231,39 @@ function navbar() {
 }
 
 function workBelt() {
+	var target = $( $('a[href^="#work"').attr('href') );
+	let height = window.innerHeight;
 
   $(".trigger").remove();
   $(".return").remove();
 
   $('.thumb-container label').click(function() {
     $('.work-belt').addClass("slided");
-		// $('#work').addClass("change-size");
+		$('#work').addClass("change-size");
     $('.work-container').show();
-
+		$('.thumb-container').css({
+			'display': 'none'
+		});
+		if ($(window).width() > 680) {
+			$('html, body').animate({
+					scrollTop: target.offset().top
+			}, 500);
+		} else {
+			$('html, body').animate({
+					scrollTop: target.offset().top - 100
+			}, 500);
+		}
+		showWork = true;
   });
 
   $('.work-return').click(function() {
+		showWork = false;
+		$('html, body').animate({
+				scrollTop: target.offset().top - (height * 30) / 100
+		}, 300);
+		$('.thumb-container').css({
+			'display': 'inline-flex'
+		});
     $('.work-belt').removeClass("slided");
     $('.work-container').hide(800);
   });
@@ -338,34 +360,35 @@ gsap.ticker.lagSmoothing(0);
 
 // use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
-	gsap.registerPlugin(ScrollTrigger)
-	// gsap code here!
-	//
-	// let horizontalSection = document.querySelector(".thumb-container");
-	//
-	// gsap.to(".thumb-container", {
-	// 	x: () => -(horizontalSection.scrollWidth - window.innerWidth),
-	// 	scrollTrigger: {
-	// 		trigger: ".thumb-container",
-	// 		start: "center center",
-	// 		end: () => "+=" + (horizontalSection.scrollWidth),
-	// 		pin: "#work",
-	// 		scrub: 1,
-	// 		// invalidateOnRefresh: true
-	// 	}
-	// });
+	if (showWork) {
+		gsap.registerPlugin(ScrollTrigger)
+		// gsap code here!
+		//
+		let horizontalSection = document.querySelector(".thumb-container");
 
-	// document.querySelectorAll(".thumb-unit").forEach((unit) => {
-	// 	gsap.from(unit, {
-	// 		x: 250,
-	// 		duration: 0.6,
-	// 		scrollTrigger: {
-	// 			trigger: unit,
-	// 			start: "top bottom",
-	// 			toggleActions: "play none none reverse"
-	// 		}
-	// 	});
-	// });
+		gsap.to(".thumb-container", {
+			x: () => +(horizontalSection.scrollWidth - window.innerWidth * 3.8),
+			scrollTrigger: {
+				trigger: ".thumb-container",
+				start: "center center",
+				end: () => "-=" - (horizontalSection.scrollWidth),
+				pin: ".thumb-wrap",
+				scrub: 1,
+				invalidateOnRefresh: true
+			}
+		});
+
+		document.querySelectorAll(".thumb-unit").forEach((unit) => {
+			gsap.from(unit, {
+				x: 250,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: unit,
+					start: "top bottom",
+					toggleActions: "play none none reverse"
+				}
+			});
+		});
 	// let verticalSection = document.querySelector(".work-container");
 
 	// gsap.to(".work-container", {
@@ -379,7 +402,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	// 		invalidateOnRefresh: true
 	// 	}
 	// });
-
+	}
 });
 
 function wordStuff() {
