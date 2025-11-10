@@ -1,5 +1,5 @@
 ---
-title: Zen Magazine
+project: Zen Magazine
 ---
 
 ![Zen Magazine]({{ site.github.url }}/assets/img/work/proj-1/img1.jpg)

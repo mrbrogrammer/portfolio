@@ -1,5 +1,5 @@
 ---
-title: BetterPicks
+project: BetterPicks
 ---
 
 BetterPicks is a web application that displays all your Spotify playlists. For the app to work effectively, the user should already have a Spotify account set up with desired playlists.

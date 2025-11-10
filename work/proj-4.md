@@ -1,5 +1,5 @@
 ---
-title: Prop App
+project: Prop App
 ---
 
 ![Landing page]({{ site.github.url }}/assets/img/work/proj-4/img1.jpg)
