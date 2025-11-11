@@ -21,7 +21,7 @@ $(function() {
 		setInterval(function() {$('.client-control-next').click()}, 10000);
 	}
 
-	// 
+	//
 	// $("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
 	// $(".biglink").fitText(1.5);
 
@@ -360,18 +360,34 @@ gsap.ticker.lagSmoothing(0);
 
 // use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
+		// Get all <label> elements in the document
+	const labelElements = document.getElementsByTagName('label');
+
+	// Get the count of <label> elements
+	const labelCount = labelElements.length;
+
+	// Log the count to the console
+	console.log(`There are ${labelCount} <label> tags in the document.`);
+	console.log(window.innerWidth);
+	console.log($(window).width() - window.innerWidth); // 15
+
 	if (showWork) {
 		gsap.registerPlugin(ScrollTrigger)
 		// gsap code here!
 		//
 		let horizontalSection = document.querySelector(".thumb-container");
-
+		// if ( > 680) {
+		//
+		// }
+		// 
+		// $(window).width()
+		// console.log(window.innerWidth);
 		gsap.to(".thumb-container", {
-			x: () => +(horizontalSection.scrollWidth - window.innerWidth * 3.8),
+			x: () => +(horizontalSection.scrollWidth * 10 / 100 - window.innerWidth * 2),
 			scrollTrigger: {
 				trigger: ".thumb-container",
 				start: "center center",
-				end: () => "-=" - (horizontalSection.scrollWidth),
+				end: () => "+=" + (horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
 				invalidateOnRefresh: true
