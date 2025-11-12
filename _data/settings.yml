@@ -111,9 +111,9 @@ clients:
 # Contact Section
 
 social:
-- {icon: 'instagram', link: 'https://www.instagram.com/simphiwe_madi/'}
-- {icon: 'linkedin', link: 'https://www.linkedin.com/in/simphiwe-madi-840961168'}
 - {icon: 'github', link: 'https://github.com/mrbrogrammer'}
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/simphiwe-madi-840961168'}
+- {icon: 'bandcamp', link: 'https://github.com/mrbrogrammer'}
 
 
 # social network icons available: 'twitter' / 'facebook' / 'github' / 'pinterest' 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribbble' / 'behance' / 'soundcloud' / 'vine'

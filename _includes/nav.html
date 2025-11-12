@@ -23,7 +23,13 @@
 
     <div class="social-links">
       {% for link in site.data.settings.social %}
-        <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
+        <!-- {% if link.index == 3 %}
+          <a href="{{ link.link }}">
+            <img src="{{ site.github.url }}/assets/img/social/bc.png" alt="Zen Magazine">
+          </a>
+        {% else %} -->
+          <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
+        <!-- {% endif %} -->
       {% endfor %}
     </div>
 

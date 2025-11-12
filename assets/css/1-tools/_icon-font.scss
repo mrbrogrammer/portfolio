@@ -6,14 +6,28 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'new-icomoon';
+  src:  url('/assets/css/1-tools/fonts/new-icomoon.eot');
+  src:  url('/assets/css/1-tools/fonts/new-icomoon.eot') format('embedded-opentype'),
+    url('/assets/css/1-tools/fonts/new-icomoon.ttf') format('truetype'),
+    url('/assets/css/1-tools/fonts/new-icomoon.woff') format('woff'),
+    url('/assets/css/1-tools/fonts/new-icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: "icomoon";
   line-height: 1;
-  
+  // padding: 3px 0 0 0;
+
+
   /* Add 1px margin-top to center the icon */
   display: block;
-  margin-top: 1px;
-  
+  // margin-top: 1px;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,3 +44,26 @@
 .icon-behance:before     { content: "\e607"; }
 .icon-soundcloud:before  { content: "\e606"; }
 .icon-vine:before        { content: "\e60a"; }
+
+[class^="icon-bandcamp"], [class*=" icon-bandcamp"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'new-icomoon';
+  line-height: 1.2 !important;
+
+
+  /* Add 1px margin-top to center the icon */
+  display: block;
+  margin-top: 1px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bandcamp:before {
+  content: "\e901";
+  font-size: 11px;
+}
+.icon-Bandcamp-bc-logotype-dark-1:before {
+  content: "\e900";
+  padding: 0 2px 0 0
+}

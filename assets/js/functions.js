@@ -382,11 +382,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		// $(window).width()
 		// console.log(window.innerWidth);
 		gsap.to(".thumb-container", {
-			x: () => +(horizontalSection.scrollWidth * 10 / 100 - window.innerWidth * 2),
+			x: () => +(horizontalSection.scrollWidth - window.innerWidth * 5),
 			scrollTrigger: {
 				trigger: ".thumb-container",
 				start: "center center",
-				end: () => "+=" + (horizontalSection.scrollWidth),
+				end: () => "-=" - (horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
 				invalidateOnRefresh: true
