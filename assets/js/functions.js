@@ -21,9 +21,8 @@ $(function() {
 		setInterval(function() {$('.client-control-next').click()}, 10000);
 	}
 
-	//
-	// $("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
-	// $(".biglink").fitText(1.5);
+	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
+	$(".biglink").fitText(1.5);
 
 	$('textarea').autosize();
 });
@@ -379,7 +378,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		// if ( > 680) {
 		//
 		// }
-		// 
+		//
 		// $(window).width()
 		// console.log(window.innerWidth);
 		gsap.to(".thumb-container", {
