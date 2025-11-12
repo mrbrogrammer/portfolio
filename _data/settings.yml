@@ -113,7 +113,7 @@ clients:
 social:
 - {icon: 'github', link: 'https://github.com/mrbrogrammer'}
 - {icon: 'linkedin', link: 'https://www.linkedin.com/in/simphiwe-madi-840961168'}
-- {icon: 'bandcamp', link: 'https://github.com/mrbrogrammer'}
+- {icon: 'bandcamp', link: 'https://mrfallback.bandcamp.com/track/grey-denim'}
 
 
 # social network icons available: 'twitter' / 'facebook' / 'github' / 'pinterest' 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribbble' / 'behance' / 'soundcloud' / 'vine'
