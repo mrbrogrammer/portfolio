@@ -31,7 +31,7 @@
     // mwidth: 500px
     // display: flex
 
-      .video-link:hover {
+      // .video-link:hover {
     // -webkit-animation: ctabounce1 400ms ease-in-out forwards;
     //         animation: ctabounce1 400ms ease-in-out forwards; }
     // .video-link:hover:after {
@@ -40,9 +40,31 @@
 
   .flex-video
     box-shadow: 0px 4px 40px 3px rgba(0,0,0,0.5)
-    transition: all 0.3ms ease-in-out
-    transform: scale(1.4)
+    // transition: all 0.3ms ease-in-out
+    // transform: scale(1.4)
     border-radius: 10px
+
+    &:hover
+      -webkit-animation: ctabounce1 400ms ease-in-out forwards
+      animation: ctabounce1 400ms ease-in-out forwards
+
+    &:hover:after
+        -webkit-animation: ctabounce2 450ms ease-in-out forwards
+        animation: ctabounce2 450ms ease-in-out forwards
+
+    &:after
+      content: ''
+      position: absolute
+      top: 25%
+      left: 35%
+      width: 30%
+      height: 50%
+      background-image: url(../img/icon-yt-play-btn.svg)
+      background-position: center
+      background-size: contain
+      background-repeat: no-repeat
+      transition: all 150ms ease-in-out
+      pointer-events: none
 
     iframe
       position: absolute
@@ -179,27 +201,17 @@ $transition-speed: 0.3s
         object-fit: cover
 
 // Play button
-.play-button
-    @include absolute-center
-    @include flex-center
-    width: 80px
-    height: 80px
-    background: rgba($primary-color, 0.9)
-    border-radius: 50%
-    transition: all $transition-speed
+// .play-button
+//     @include absolute-center
+//     @include flex-center
+//     width: 100px
+//     height: 100px
+//     background: url(../img/icon-yt-play-btn.svg) center no-repeat
+//     transition: all $transition-speed
+//
+//     &:hover
+//         transform: translate(-50%, -50%) scale(1.1)
 
-    &:hover
-        background: rgba($primary-color, 1)
-        transform: translate(-50%, -50%) scale(1.1)
-
-    &::after
-        content: ''
-        width: 0
-        height: 0
-        border-left: 25px solid white
-        border-top: 15px solid transparent
-        border-bottom: 15px solid transparent
-        margin-left: 5px
 
 // Video iframe
 .video-iframe
@@ -232,6 +244,28 @@ $transition-speed: 0.3s
         transform: rotate(0deg)
     100%
         transform: rotate(360deg)
+
+
+@-webkit-keyframes ctabounce1
+  0%
+    transform: translate(0px, 0px)
+  40%
+    transform: translate(0px, -12px)
+  80%
+    transform: translate(0px, 2px)
+  100%
+    transform: translate(0px, 0px)
+
+@keyframes ctabounce1
+  0%
+    transform: translate(0px, 0px)
+  40%
+    transform: translate(0px, -12px)
+  80%
+    transform: translate(0px, 2px)
+  100%
+    transform: translate(0px, 0px)
+
 
 // Error state
 .error
