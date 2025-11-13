@@ -75,11 +75,13 @@ clients:
 - {avatar: 'face-bronwyn.jpg',
   name: 'Bronwyn Ardè',
   title: 'Head of People',
+  company: 'Saicom Voice Services',
   quote: '<p> His quick sense of humour, bright smile, and positive demeanour contributed to a welcoming and uplifting atmosphere in the workplace. He demonstrated self-pride, ambition, and a maturity beyond his years, which were evident in the way he carried himself and approached his work.</p>',
   logo: 'saicom-logo.jpg'}
 
 - {avatar: 'face-kevin.jpg',
   name: 'Kevin Mntambo',
+  company: 'WeThinkCode_',
   title: 'Photographer/Videographer, Content Club.',
   quote: '<p>Working alongside Simphiwe, I got to witness his deep passionate for art and sense of community, he was and remains a great friend/allay to the Wethinkcode_ content club.</p>',
   logo: 'logo1.png'}
@@ -87,6 +89,7 @@ clients:
 - {avatar: 'face-sean.jpg',
   name: 'Siphesihle (Sean) Thomo',
   title: 'Software Developer',
+  company: 'WeThinkCode_',
   quote: '<p> I am very grateful to have had the opportunity to work with such a competent
           and supportive mentor. He not only provided technical expertise and support,
           but also challenged me to step out of my comfort zone and take on more difficult tasks.</p>',
@@ -94,15 +97,17 @@ clients:
 
 - {avatar: 'face-kevin.jpg',
   name: 'Kevin Mntambo',
+  company: 'WeThinkCode_',
   title: 'Photographer/Videographer, Content Club.',
   quote: '<p>Working alongside Simphiwe, I got to witness his deep passionate
           for art and sense of community, he was and remains a great friend/allay
-          to the Wethinkcode_ content club.</p>',
+          to the WeThinkCode_ content club.</p>',
   logo: 'logo1.png'}
 
 - {avatar: 'face-bronwyn.jpg',
   name: 'Bronwyn Ardè',
   title: 'Head of People',
+  company: 'Saicom Voice Services',
   quote: '<p> His quick sense of humour, bright smile, and positive demeanour contributed to a welcoming and uplifting atmosphere in the workplace. He demonstrated self-pride, ambition, and a maturity beyond his years, which were evident in the way he carried himself and approached his work.</p>',
   logo: 'saicom-logo.jpg'}
 
