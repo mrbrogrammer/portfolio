@@ -4,12 +4,13 @@ footer
   background-color: #eee
 
   .lockup
-    padding: 50px 30px
-    height: calc(10vh + 10px)
+    padding: 8px 0 12px 0
+    display: inline-flex
+    float: right
     +clearfix
 
     .content-wrap
-      float: left
+      float: right
       margin-left: 80px
 
       .copyright
@@ -26,6 +27,22 @@ footer
 
         &:hover
           color: rgba(0,0,0,0.7)
+
+  .logo
+    +hide-text
+    // display: inline-block
+    max-width: 150px
+    color: $accent
+    fill: $accent
+    background:
+      position: center
+      size: contain
+      image: url(../img/#{$logo-path})
+      repeat: no-repeat
+    height: 50px
+    font-size: 8px
+    margin-left: 20px
+    padding: 0 25px
 
 @media(max-width: 680px)
   footer
