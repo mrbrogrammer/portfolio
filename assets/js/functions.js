@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			scrollTrigger: {
 				trigger: ".thumb-container",
 				start: "center center",
-				end: () => "+=" + (horizontalSection.scrollWidth),
+				end: () => "+=" - (horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
 				invalidateOnRefresh: true
@@ -396,10 +396,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		document.querySelectorAll(".thumb-unit").forEach((unit) => {
 			gsap.from(unit, {
 				x: 250,
-				duration: 0.6,
+				duration: 1,
 				scrollTrigger: {
 					trigger: unit,
-					start: "top bottom",
+					start: "top center bottom",
 					toggleActions: "play none none reverse"
 				}
 			});
