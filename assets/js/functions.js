@@ -111,7 +111,7 @@ $(window).resize(function() {
 	} else {
 		clientWideStart();
 	}
-	ScrollTrigger.refresh(true);
+	// ScrollTrigger.refresh(true);
 });
 
 
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			scrollTrigger: {
 				trigger: ".thumb-container",
 				start: "center center",
-				end: () => "-=" -(horizontalSection.scrollWidth),
+				end: () => "+=" -(horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
 				invalidateOnRefresh: true,
