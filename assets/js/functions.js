@@ -29,7 +29,6 @@ $(function() {
 
 $(window).scroll(function(){
 	youtubeVidScroll();
-	ScrollTrigger.refresh();
 });
 
 function youtubeVidScroll(){
@@ -112,6 +111,7 @@ $(window).resize(function() {
 	} else {
 		clientWideStart();
 	}
+	ScrollTrigger.refresh(true);
 });
 
 
@@ -366,11 +366,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		let horizontalSection = document.querySelector(".thumb-container");
 
 		gsap.to(".thumb-container", {
-			x: () => -(horizontalSection.scrollWidth + 100 - $(window).width() + 200),
+			x: () => -(horizontalSection.scrollWidth - 100 - $(window).width() + 100),
 			scrollTrigger: {
 				trigger: ".thumb-container",
 				start: "center center",
-				end: () => "+=" -(horizontalSection.scrollWidth),
+				end: () => "-=" -(horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
 				invalidateOnRefresh: true,
