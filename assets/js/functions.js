@@ -373,8 +373,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				end: () => "+=" -(horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
-				invalidateOnRefresh: true,
-				invalidateOnChange: true
+				invalidateOnRefresh: true
 			}
 		});
 
