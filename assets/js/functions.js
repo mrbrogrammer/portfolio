@@ -224,7 +224,6 @@ function navbar() {
 			$(".mobile-header-position").removeClass("is-open");
 			$(".mobile-nav-toggle").removeClass("is-open");
 		}
-		console.log("After: " + isOpen);
 	});
 
 }
@@ -359,44 +358,29 @@ gsap.ticker.lagSmoothing(0);
 
 // use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
-		// Get all <label> elements in the document
-	const labelElements = document.getElementsByTagName('label');
 
-	// Get the count of <label> elements
-	const labelCount = labelElements.length;
-
-	// Log the count to the console
-	console.log(`There are ${labelCount} <label> tags in the document.`);
-	console.log(window.innerWidth);
-	console.log($(window).width() - window.innerWidth); // 15
-
-	if (showWork) {
 		gsap.registerPlugin(ScrollTrigger)
 		// gsap code here!
-		//
+
 		let horizontalSection = document.querySelector(".thumb-container");
-		// if ( > 680) {
-		//
-		// }
-		//
-		// $(window).width()
-		// console.log(window.innerWidth);
+
 		gsap.to(".thumb-container", {
-			x: () => +(horizontalSection.scrollWidth * 10 / 100 - window.innerWidth * 2),
+			x: () => -(horizontalSection.scrollWidth - $(window).width() + 200),
 			scrollTrigger: {
 				trigger: ".thumb-container",
 				start: "center center",
-				end: () => "+=" - (horizontalSection.scrollWidth),
+				end: () => "-=" -(horizontalSection.scrollWidth),
 				pin: ".thumb-wrap",
 				scrub: 1,
-				invalidateOnRefresh: true
+				invalidateOnRefresh: true,
+				invalidateOnChange: true
 			}
 		});
 
-		document.querySelectorAll(".thumb-unit").forEach((unit) => {
+		document.querySelectorAll("label").forEach((unit) => {
 			gsap.from(unit, {
 				x: 250,
-				duration: 1,
+				duration: 0.6,
 				scrollTrigger: {
 					trigger: unit,
 					start: "top center bottom",
@@ -404,20 +388,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				}
 			});
 		});
-	// let verticalSection = document.querySelector(".work-container");
-
-	// gsap.to(".work-container", {
-	// 	x: () => -(verticalSection.scrollHeight - window.innerHeight),
-	// 	scrollTrigger: {
-	// 		trigger: ".work-container",
-	// 		start: "center center",
-	// 		end: () => "+=" + (verticalSection.scrollHeight),
-	// 		// pin: "#work",
-	// 		scrub: 1,
-	// 		invalidateOnRefresh: true
-	// 	}
-	// });
-	}
 });
 
 function wordStuff() {

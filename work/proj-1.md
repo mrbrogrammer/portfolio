@@ -10,6 +10,6 @@ project: Zen Magazine
 ![Zen Magazine]({{ site.github.url }}/assets/img/work/proj-1/img6.jpg)
 
 
-<a class="home-cta" markdown="1" href="https://zen-developers.github.io/zendigital.github.io">Zen's First design</a>
+<a class="work-cta" markdown="1" href="https://zen-developers.github.io/zendigital.github.io"><span>Zen's First design</span></a>
 
-<a class="home-cta" markdown="1" href="https://zen-b78f05a1d2ca.herokuapp.com">View project</a>
+<a class="work-cta" markdown="1" href="https://zen-b78f05a1d2ca.herokuapp.com"><span>View project</span></a>

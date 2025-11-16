@@ -38,6 +38,7 @@
   width: 50%
   height: 50%
   float: left
+  min-height: 100%
 
 .work-wrap
   width: 50%
@@ -47,11 +48,8 @@
 
 .thumb-container
   display: inline-flex
-  // max-width: 960px
-  min-width: 200%
-  // max-height: 1024px
+  min-width: 300%
   margin: 0px auto
-  padding-left: 50%
   +clearfix
 
   label
@@ -60,21 +58,19 @@
     float: left
     width: 50%
     cursor: pointer
-    margin: 20px
-    transition: all 300ms ease-in-out
+    margin-left: 2%
 
     .thumb-unit
       display: block
       overflow: hidden
       width: 100%
       height: 100%
-      // border: 4px solid white
       border-radius: 2%
       transition: box-shadow 300ms ease-in-out
-      box-shadow: 0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)
+      box-shadow: 0px 40px 27px -20px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)
 
       &:hover
-        box-shadow: 0px 40px 27px -20px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)
+        box-shadow: 0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)
         -webkit-animation: ctabounce1 400ms ease-in-out forwards
         animation: ctabounce1 400ms ease-in-out forwards
 
@@ -128,7 +124,6 @@
   margin-top: 20px
   padding: 0 15px
   +box-sizing(border-box)
-
   position: relative
   display: none
 
@@ -149,7 +144,7 @@
     +size(40px)
     cursor: pointer
     opacity: 0.5
-    +position(absolute, -4px null null -60px)
+    +position(relative, -4px null null -60px)
 
     path
       fill: rgba(0,0,0,0.4)
@@ -161,40 +156,40 @@
 @media (max-width: 680px)
   #work
     margin-left: 0
-    .thumb-container
-      padding-left: 0
-
-
-      label
-        width: 200px
-        margin: 10px
-
-        .thumb-unit
-          display: block
-          overflow: hidden
+  //
+  //   .thumb-container
+  //     min-width: 200%
+  //     padding-left: 2%
+  //
+  //     label
+  //       // width: 50%
+  //       // margin-left: 20%
+  //
+  //       .thumb-unit
+  //         display: block
+  //         overflow: hidden
           // border: 4px solid white
-          margin: 10px
-          border-radius: 2%
 
 
 @media (max-width: 780px)
-  #work
-      label
-        width: 200px
-        margin: 10px
+  // #work
+  //   .thumb-container
+  //     min-width: 300%
+  //     padding-left: 2%
+  //
+  //     label
+  //       width: 50%
+  //       // margin: 30px
+  //
+  //       .thumb-unit
+  //         display: block
+  //         overflow: hidden
 
-        .thumb-unit
-          display: block
-          overflow: hidden
-          // border: 4px solid white
-          margin: 10px
-          border-radius: 2%
 
   .work-container
 
     .work-return
       left: 0px
-
 
   h4
     margin-left: 60px

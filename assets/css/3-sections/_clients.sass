@@ -7,9 +7,6 @@
     background-color: $accent
     color: white
 
-    &:hover
-      background-color: $accent-light
-
   .col-50
     align-items: center
     margin-top: 150px
@@ -33,22 +30,27 @@
     background:
       size: cover
       position: center
-    margin-bottom: 35px
+    margin-bottom: 38px
     // box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1) inset
-    transition: all 150ms ease-in-out
+    transition: all 200ms ease-in-out
     box-shadow: 0px 4px 8px rgba(0,0,0,0.4)
     position: relative
     cursor: pointer
 
     &:hover
-      box-shadow: 0px 40px 27px -20px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)
+      box-shadow: 0px 40px 27px -20px rgba(0, 0, 0, 0.3), 0px 3px 20px rgba(0, 0, 0, 0.2)
       margin-top: -5px
-      transform: scale(1.1)
+      // transform: scale(1.1)
 
     &.back-btn
       background: white url(../img/icon-prev.svg) center no-repeat
       background-size: 50px 45px
       display: none
+
+
+  .face.has-bubble-open
+      box-shadow: 0px 40px 27px -20px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)
+      margin-top: -5px
 
   .bubble
     opacity: 0
