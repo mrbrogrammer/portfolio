@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			"(max-width: 680px)": function() {
 
 				gsap.to(".thumb-container", {
-					x: () => -(horizontalSection.scrollWidth - $(window).width()),
+					x: () => -(horizontalSection.scrollWidth - $(window).width() - 200),
 					scrollTrigger: {
 						trigger: ".thumb-container",
 						start: "center center",
