@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 						scrollTrigger: {
 							trigger: unit,
 							start: "top center bottom",
-							toggleActions: "play reverse play reverse"
+							toggleActions: "play none none reverse"
 						}
 					})
 				})
