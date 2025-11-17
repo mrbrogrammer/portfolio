@@ -400,11 +400,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		// small
 		"(max-width: 680px)": function() {
 			gsap.to(".thumb-container", {
-				x: () => -(horizontalSection.scrollWidth - $(window).width()),
+				x: () => -(horizontalSection.scrollWidth  - $(window).width() + 100),
 				scrollTrigger: {
 					trigger: ".thumb-container",
 					start: "center center",
-					end: () => "-=" -(horizontalSection.scrollWidth),
+					end: () => "+=" -(horizontalSection.scrollWidth),
 					pin: ".thumb-wrap",
 					scrub: 1,
 					invalidateOnRefresh: true,
@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			document.querySelectorAll("label").forEach((unit) => {
 				gsap.from(unit, {
 					x: 100,
-					duration: 0.6,
+					duration: 0.8,
 					scrollTrigger: {
 						trigger: unit,
 						start: "top bottom",
