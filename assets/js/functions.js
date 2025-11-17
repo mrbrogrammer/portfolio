@@ -364,9 +364,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	// gsap code here!
 
 	let horizontalSection = document.querySelector(".thumb-container");
+
 	ScrollTrigger.matchMedia({
 
-		// small
+		// large
 		"(min-width: 680px)": function() {
 			gsap.to(".thumb-container", {
 				x: () => -(horizontalSection.scrollWidth - $(window).width() + 200),
@@ -386,8 +387,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 					duration: 0.8,
 					scrollTrigger: {
 						trigger: unit,
-						start: "top bottom",
-						toggleActions: "play none none reverse"
+						start: "top center bottom",
+						toggleActions: "play reverse play reverse"
 					}
 				})
 			})
@@ -398,13 +399,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 		// small
 		"(max-width: 680px)": function() {
-
 			gsap.to(".thumb-container", {
-				x: () => -(horizontalSection.scrollWidth - $(window).width() - 200),
+				x: () => -(horizontalSection.scrollWidth - $(window).width()),
 				scrollTrigger: {
 					trigger: ".thumb-container",
 					start: "center center",
-					end: "200% center",
+					end: () => "+=" -(horizontalSection.scrollWidth),
 					pin: ".thumb-wrap",
 					scrub: 1,
 					invalidateOnRefresh: true,
