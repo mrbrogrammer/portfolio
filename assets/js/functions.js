@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 					duration: 0.8,
 					scrollTrigger: {
 						trigger: unit,
-						start: "top center bottom",
+						start: "top bottom",
 						toggleActions: "play none none reverse"
 					}
 				})
