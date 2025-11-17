@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				scrollTrigger: {
 					trigger: ".thumb-container",
 					start: "center center",
-					end: () => "+=" -(horizontalSection.scrollWidth),
+					end: "200% center",
 					pin: ".thumb-wrap",
 					scrub: 1,
 					invalidateOnRefresh: true,
