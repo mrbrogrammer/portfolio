@@ -359,71 +359,73 @@ gsap.ticker.lagSmoothing(0);
 
 // use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
+	if (showWork) {
 
-	gsap.registerPlugin(ScrollTrigger)
-	// gsap code here!
+		gsap.registerPlugin(ScrollTrigger)
+		// gsap code here!
 
-	let horizontalSection = document.querySelector(".thumb-container");
+		let horizontalSection = document.querySelector(".thumb-container");
 
-	ScrollTrigger.matchMedia({
+		ScrollTrigger.matchMedia({
 
-		// large
-		"(min-width: 680px)": function() {
-			gsap.to(".thumb-container", {
-				x: () => -(horizontalSection.scrollWidth - $(window).width() + 200),
-				scrollTrigger: {
-					trigger: ".thumb-container",
-					start: "center center",
-					end: () => "+=" -(horizontalSection.scrollWidth),
-					pin: ".thumb-wrap",
-					scrub: 1,
-					invalidateOnRefresh: true
-				}
-			})
-
-			document.querySelectorAll("label").forEach((unit) => {
-				gsap.from(unit, {
-					x: 250,
-					duration: 0.8,
+			// large
+			"(min-width: 680px)": function() {
+				gsap.to(".thumb-container", {
+					x: () => -(horizontalSection.scrollWidth - $(window).width() + 200),
 					scrollTrigger: {
-						trigger: unit,
-						start: "top center bottom",
-						toggleActions: "play reverse play reverse"
+						trigger: ".thumb-container",
+						start: "center center",
+						end: () => "+=" -(horizontalSection.scrollWidth),
+						pin: ".thumb-wrap",
+						scrub: 1,
+						invalidateOnRefresh: true
 					}
 				})
-			})
-		}
-	});
 
-	ScrollTrigger.matchMedia({
+				document.querySelectorAll("label").forEach((unit) => {
+					gsap.from(unit, {
+						x: 250,
+						duration: 0.8,
+						scrollTrigger: {
+							trigger: unit,
+							start: "top center bottom",
+							toggleActions: "play reverse play reverse"
+						}
+					})
+				})
+			}
+		});
 
-		// small
-		"(max-width: 680px)": function() {
-			gsap.to(".thumb-container", {
-				x: () => -(horizontalSection.scrollWidth  - $(window).width() + 100),
-				scrollTrigger: {
-					trigger: ".thumb-container",
-					start: "center center",
-					end: () => "+=" -(horizontalSection.scrollWidth),
-					pin: ".thumb-wrap",
-					scrub: 1,
-					invalidateOnRefresh: true,
-				}
-			})
+		ScrollTrigger.matchMedia({
 
-			document.querySelectorAll("label").forEach((unit) => {
-				gsap.from(unit, {
-					x: 100,
-					duration: 0.8,
+			// small
+			"(max-width: 680px)": function() {
+				gsap.to(".thumb-container", {
+					x: () => -(horizontalSection.scrollWidth  - $(window).width() + 100),
 					scrollTrigger: {
-						trigger: unit,
-						start: "top bottom",
-						toggleActions: "play none none reverse"
+						trigger: ".thumb-container",
+						start: "center center",
+						end: () => "+=" -(horizontalSection.scrollWidth),
+						pin: ".thumb-wrap",
+						scrub: 1,
+						invalidateOnRefresh: true,
 					}
 				})
-			})
-		}
-	});
+
+				document.querySelectorAll("label").forEach((unit) => {
+					gsap.from(unit, {
+						x: 100,
+						duration: 0.8,
+						scrollTrigger: {
+							trigger: unit,
+							start: "top bottom",
+							toggleActions: "play none none reverse"
+						}
+					})
+				})
+			}
+		});
+	}
 });
 
 function wordStuff() {
