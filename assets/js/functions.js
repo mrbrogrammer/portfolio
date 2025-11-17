@@ -14,6 +14,7 @@ $(function() {
 	wordStuff();
 	startBlog();
 	startClients();
+	hideYTButton();
 	navSelectionScroll(prevSelection, wordStuffOnYoutubeScroll);
 
 	// This function takes in a function and the timeout duration in miliseconds.
@@ -95,6 +96,13 @@ function clientNarrowStart() {
 		.siblings().removeClass('has-bubble-open');
 }
 
+
+function hideYTButton() {
+	$('.flex-video').on('click', function(event) {
+		$(this).addClass('hide-after');
+	});
+}
+
 function clientWideStart() {
 	$('.faces').css({
 		'top': '0px',
@@ -111,7 +119,7 @@ $(window).resize(function() {
 	} else {
 		clientWideStart();
 	}
-	ScrollTrigger.refresh(true);
+	// ScrollTrigger.refresh(true);
 });
 
 
@@ -434,6 +442,7 @@ function wordStuff() {
 	const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
 
 	document.fonts.ready.then(() => {
+		morph.restart(true);
 
 		$('.blurb-section').addClass('highlight');
 
@@ -458,6 +467,8 @@ function wordStuff() {
 	  });
 	});
 }
+
+var morph = gsap.to("#circle", { duration: 1, morphSVG:"#draw-logo"});
 
 
 $(document).ready(function() {
