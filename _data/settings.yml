@@ -82,7 +82,7 @@ clients:
 - {avatar: 'face-kevin.jpg',
   name: 'Kevin Mntambo',
   company: 'WeThinkCode_',
-  title: 'Photographer/Videographer, Content Club.',
+  title: 'Photographer/Videographer, Content Club',
   quote: '<p>Working alongside Simphiwe, I got to witness his deep passionate for art and sense of community, he was and remains a great friend/allay to the Wethinkcode_ content club.</p>',
   logo: 'logo1.png'}
 
@@ -98,7 +98,7 @@ clients:
 - {avatar: 'face-kevin.jpg',
   name: 'Kevin Mntambo',
   company: 'WeThinkCode_',
-  title: 'Photographer/Videographer, Content Club.',
+  title: 'Photographer/Videographer, Content Club',
   quote: '<p>Working alongside Simphiwe, I got to witness his deep passionate
           for art and sense of community, he was and remains a great friend/allay
           to the WeThinkCode_ content club.</p>',
