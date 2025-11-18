@@ -12,4 +12,4 @@ project: Zen Magazine
 
 <a class="work-cta" markdown="1" href="https://zen-developers.github.io/zendigital.github.io"><span>Zen's First design</span></a>
 
-<a class="work-cta" markdown="1" href="https://zen-b78f05a1d2ca.herokuapp.com"><span>View project</span></a>
+<a class="work-cta" markdown="1" href="http://zen-magazine.s3-website.eu-north-1.amazonaws.com/"><span>View project</span></a>
