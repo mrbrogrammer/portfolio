@@ -4,7 +4,7 @@
 title: Simphiwe Madi dot co dot za
 description: Software Developer, Software tester, and a really good friend
 email: simphiwe@simphiwemadi.co.za
-# NOTE: The Logo and Background image are defined in the all.sass document.
+# NOTE: The Logo and Background image are defined in the all.sass document
 
 menu:
 - {name: About, url: '#about'}
