@@ -40,7 +40,6 @@ function youtubeVidScroll(){
 
 function startNav() {
 	$('.header-position').addClass('lift-nav');
-	console.log($(window));
 }
 
 function endNav() {
