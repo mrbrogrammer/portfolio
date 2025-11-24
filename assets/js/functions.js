@@ -4,6 +4,7 @@ var prevSelection = $('a[href^="#about"]');
 let showWork = true;
 
 $(function() {
+	filterPosts();
 	smoothScroll(500, prevSelection);
 	workBelt(showWork);
 	navbar();
@@ -37,10 +38,19 @@ function youtubeVidScroll(){
 	$('.video-strip').css('background-position','center -'+ wScroll + 'px');
 }
 
+function startNav() {
+	$('.header-position').addClass('lift-nav');
+}
+
+$(window).on('scrollend', function(){
+	$('.header-position').removeClass('lift-nav');
+});
+
 $(window).scroll(function(){
 	startBlog();
 	startClients();
 	navSelectionScroll(prevSelection);
+	startNav();
 });
 
 function startClients() {
@@ -53,6 +63,42 @@ function startClients() {
 			}
 			// setTimeout()function;
 		}
+}
+
+
+function filterPosts() {
+	let value = '';
+	let articleNames = [];
+	const blogs = $('.blog-list').children();
+
+	for (i = 0; i < blogs.length; i++) {
+		articleNames.push(blogs[i].innerText.split('\n')[0].trim());
+	}
+
+	$('.search-blog').on('input', function(event){
+		$('.blog-list').children().css({
+			'display': 'none'
+		});
+
+		if (event.originalEvent.data == null){
+			value = value.substring(0, value.length - 1);
+		} else {
+				value += event.originalEvent.data;
+		}
+
+		articleNames.forEach((item, i) => {
+			if (item.toLowerCase().includes(value.toLowerCase())) {
+
+				for (i = 0; i < blogs.length; i++) {
+					if (item.trim().toLowerCase() === blogs[i].innerText.split('\n')[4].trim().toLowerCase()) {
+						$(blogs[i]).css({
+							'display': 'block'
+						});
+					}
+				}
+			}
+		});
+	});
 }
 
 function clientsBubbleClick() {
