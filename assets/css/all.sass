@@ -24,11 +24,17 @@ $headlineColor: {{ site.data.layout.headlineColor }}
 $bgcolor: {{ site.data.layout.bgcolor }}
 $documentBackgroundColor: {{ site.data.layout.documentBackgroundColor }}
 
-#listing
-  flex-direction: column
-  display: flex
-  justify-content: space-between
+#listing-wrap
+  position: absolute
   height: 100%
+  width: 100%
+
+  .listing
+    flex-direction: column
+    display: flex
+    justify-content: space-between
+    height: 100%
+
 
 @import '1-tools/-tools-dir'
 @import '2-base/-base-dir'

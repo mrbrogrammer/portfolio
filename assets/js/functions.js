@@ -40,11 +40,21 @@ function youtubeVidScroll(){
 
 function startNav() {
 	$('.header-position').addClass('lift-nav');
+	console.log($(window));
+}
+
+function endNav() {
+  $('.header-position').removeClass('lift-nav');
 }
 
 $(window).on('scrollend', function(){
-	$('.header-position').removeClass('lift-nav');
+  endNav();
 });
+
+$(window).on('scrollsnapchange', function(){
+  endNav();
+});
+
 
 $(window).scroll(function(){
 	startBlog();
