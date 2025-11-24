@@ -9,11 +9,6 @@ $(function() {
 	navbar();
   navSelectionScroll(prevSelection);
 	navSelectionScroll(prevSelection, wordStuffOnYoutubeScroll);
-
-	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
-	$(".biglink").fitText(1.5);
-
-	$('textarea').autosize();
 });
 
 function startNav() {
@@ -116,127 +111,6 @@ function navbar() {
 	});
 
 }
-
-
-// Initialize a new Lenis instance for smooth scrolling
-const lenis = new Lenis();
-
-// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-lenis.on('scroll', ScrollTrigger.update);
-
-// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-// This ensures Lenis's smooth scroll animation updates on each GSAP tick
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-});
-
-// Disable lag smoothing in GSAP to prevent any delay in scroll animations
-gsap.ticker.lagSmoothing(0);
-
-// use a script tag or an external JS file
-document.addEventListener("DOMContentLoaded", (event) => {
-	if (showWork) {
-
-		gsap.registerPlugin(ScrollTrigger)
-		// gsap code here!
-
-		let horizontalSection = document.querySelector(".thumb-container");
-
-		ScrollTrigger.matchMedia({
-
-			// large
-			"(min-width: 680px)": function() {
-				gsap.to(".thumb-container", {
-					x: () => -(horizontalSection.scrollWidth - $(window).width() + 200),
-					scrollTrigger: {
-						trigger: ".thumb-container",
-						start: "center center",
-						end: () => "+=" -(horizontalSection.scrollWidth),
-						pin: ".thumb-wrap",
-						scrub: 1,
-						invalidateOnRefresh: true
-					}
-				})
-
-				document.querySelectorAll("label").forEach((unit) => {
-					gsap.from(unit, {
-						x: 250,
-						duration: 0.8,
-						scrollTrigger: {
-							trigger: unit,
-							start: "top center bottom",
-							toggleActions: "play none none reverse"
-						}
-					})
-				})
-			}
-		});
-
-		ScrollTrigger.matchMedia({
-
-			// small
-			"(max-width: 680px)": function() {
-				gsap.to(".thumb-container", {
-					x: () => -(horizontalSection.scrollWidth  - $(window).width() + 100),
-					scrollTrigger: {
-						trigger: ".thumb-container",
-						start: "center center",
-						end: () => "+=" -(horizontalSection.scrollWidth),
-						pin: ".thumb-wrap",
-						scrub: 1,
-						invalidateOnRefresh: true,
-					}
-				})
-
-				document.querySelectorAll("label").forEach((unit) => {
-					gsap.from(unit, {
-						x: 100,
-						duration: 0.8,
-						scrollTrigger: {
-							trigger: unit,
-							start: "top bottom",
-							toggleActions: "play none none reverse"
-						}
-					})
-				})
-			}
-		});
-	}
-});
-
-function wordStuff() {
-	gsap.registerPlugin(SplitText);
-
-	const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
-
-	document.fonts.ready.then(() => {
-		morph.restart(true);
-
-		$('.blurb-section').addClass('highlight');
-
-	  gsap.set(".split", { opacity: 1 });
-
-	  const split = SplitText.create(".split", {
-	    type: "words",
-	    wordsClass: "word",
-	    prepareText: (text, el) => {
-	      return [...segmenter.segment(text)].map(s => s.segment).join(String.fromCharCode(8204))
-	    },
-	    wordDelimiter: { delimiter: /\u200c/, replaceWith: " " },
-	    autoSplit: true,
-	    onSplit: (self) => {
-	      return gsap.from(self.words, {
-	        y: 50,
-	        opacity: 0,
-	        stagger: 0.1,
-	        ease: "back"
-	      });
-	    }
-	  });
-	});
-}
-
-var morph = gsap.to("#circle", { duration: 1, morphSVG:"#draw-logo"});
 
 
 $(document).ready(function() {

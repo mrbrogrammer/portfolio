@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: People like use do things like this
 thumbnail: post-6.jpg
 ---
 
 Superinposita dira me Iove, lanigeris tendunt! Illis gladii, in pignusque dixit
-trisulcis latices. Me mora usque carchesia plenaque 
+trisulcis latices. Me mora usque carchesia plenaque
 
 ## In nunc
 

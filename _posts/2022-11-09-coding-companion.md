@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: Coding companion
 thumbnail: post-4.jpg
 ---
 
 Superinposita dira me Iove, lanigeris tendunt! Illis gladii, in pignusque dixit
-trisulcis latices. Me mora usque carchesia plenaque 
+trisulcis latices. Me mora usque carchesia plenaque
 
 ## In nunc
 

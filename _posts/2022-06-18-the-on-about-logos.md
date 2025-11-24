@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: The one about logos
 thumbnail: post-3.jpg
 ---
 
 Superinposita dira me Iove, lanigeris tendunt! Illis gladii, in pignusque dixit
-trisulcis latices. Me mora usque carchesia plenaque 
+trisulcis latices. Me mora usque carchesia plenaque
 
 ## In nunc
 

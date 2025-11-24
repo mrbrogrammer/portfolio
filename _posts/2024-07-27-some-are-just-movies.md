@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: Some are just movies
 thumbnail: post-11.jpg
 ---
 
 Superinposita dira me Iove, lanigeris tendunt! Illis gladii, in pignusque dixit
-trisulcis latices. Me mora usque carchesia plenaque 
+trisulcis latices. Me mora usque carchesia plenaque
 
 ## In nunc
 

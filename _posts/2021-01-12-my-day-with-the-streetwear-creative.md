@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: My Day With The Streetwear Creative
 author: Simphiwe Madi
 excerpt: "Having been in the Johannesburg  fashion scene for almost a decade. Vulcan Juwish has always kept adding a sartorial contribution. They started of selling T-shits, caps and bags with graphics which during"

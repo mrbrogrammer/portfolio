@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: Do we still use maps
 thumbnail: post-9.jpg
 ---
 
 Superinposita dira me Iove, lanigeris tendunt! Illis gladii, in pignusque dixit
-trisulcis latices. Me mora usque carchesia plenaque 
+trisulcis latices. Me mora usque carchesia plenaque
 
 ## In nunc
 

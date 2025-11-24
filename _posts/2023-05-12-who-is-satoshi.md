@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: Who is Satoshi
 thumbnail: post-5.jpg
 ---
 
 Superinposita dira me Iove, lanigeris tendunt! Illis gladii, in pignusque dixit
-trisulcis latices. Me mora usque carchesia plenaque 
+trisulcis latices. Me mora usque carchesia plenaque
 
 ## In nunc
 
