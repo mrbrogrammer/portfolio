@@ -1,0 +1,24 @@
+<section id="blog-listing">
+  <div class="flex flex--center">
+    <div class="col-2">
+      <div class="listing-wrap">
+        <ul class="blog-list">
+          {% for post in site.posts %}
+            <li>
+              <a href="{{posts.url}}" style="background-image: url({{ site.github.url }}/assets/img/posts/thumbnails/{{post.thumbnail}}); height: 50px; width: 50px;" class="listing-thumb"></a>
+              <div class="post-meta">
+                <a href="{{post.url}}" class="post-title">
+                  {{ post.title }}
+                </a>
+                <p class="post-excerpt" style="color: #444;">
+                  {{ post.excerpt }}
+                </p>
+                <div class="post-date">{{post.date | date: "%b, %d, %Y"}}</div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
