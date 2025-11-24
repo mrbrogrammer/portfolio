@@ -149,6 +149,11 @@ header
     flex-direction: column
     z-index: 2
     justify-content: space-between
+    transition: all 250ms ease-in-out
+
+    &.lift-nav
+      box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2)
+
 
   .site-nav
     ul
@@ -301,8 +306,6 @@ header
     font-weight: 700
     text-transform: uppercase
     justify-content: space-between
-
-    .mobile-nav
 
     .social-links
       width: 100%
