@@ -2,13 +2,10 @@
 layout: post
 title: My Day With The Streetwear Creative
 author: Simphiwe Madi
-excerpt: "Having been in the Johannesburg  fashion scene for almost a decade. Vulcan Juwish has always kept adding a sartorial contribution. They started of selling T-shits, caps and bags with graphics which during"
 thumbnail: post-1.jpg
 ---
 
-## Vulcan Juwish - a refreshing approach to subculture
-
-**Now with it's new brand direction called *GodsSon* set to pioneer streetwear to high-fashion revealing tailored male and female clothes imbued with craft and heritage. **
+Vulcan Juwish - a refreshing approach to subculture Now with it's new brand direction called *GodsSon* set to pioneer streetwear to high-fashion revealing tailored male and female clothes imbued with craft and heritage.
 
 Having been in the Johannesburg  fashion scene for almost a decade. Vulcan Juwish has always kept adding a sartorial contribution. They started of selling T-shits, caps and bags with graphics which during the sablimial era of Braamfontein were propelled by king kotini, Asap Ferg, and Okmalumcoolkat.
 

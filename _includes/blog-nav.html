@@ -1,0 +1,41 @@
+
+<header class="home-wrap">
+  <div class="header-position">
+
+    <a href="/" class="logo">
+      sm
+    </a>
+
+    <nav class="site-nav">
+
+      {% for item in site.data.settings.menu %}
+      <ul>
+        <li>
+          <a href="../{{ site.github.url }}{{ item.url }}">
+            <div class="{% if forloop.index == 1 %}toggle-arrow{% endif %}"></div>
+            {{ item.name }}
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+
+    </nav>
+
+    <div class="social-links">
+      {% for link in site.data.settings.social %}
+        <!-- {% if link.index == 3 %}
+          <a href="{{ link.link }}">
+            <img src="{{ site.github.url }}/assets/img/social/bc.png" alt="Zen Magazine">
+          </a>
+        {% else %} -->
+          <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
+        <!-- {% endif %} -->
+      {% endfor %}
+    </div>
+
+    <div class="mobile-nav-toggle">
+      <span></span>
+    </div>
+  </div>
+
+</header>
