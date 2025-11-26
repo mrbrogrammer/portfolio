@@ -150,7 +150,7 @@ bundle exec jekyll build
 
 **Author & Contact**
 - Simphiwe Madi — Software Developer
-- Location: (your location)
+- Location: Johannesburg
 - Skills: Java, Spring Boot, React
 - Interests: Photography, Videography, Learning new tech
 
