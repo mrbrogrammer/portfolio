@@ -1,15 +1,41 @@
 let clientStuffInterval = true;
 let wordStuffOnYoutubeScroll = true;
-var prevSelection = $('a[href^="#blog"]');
+var prevSelection = $('a[href="(\.\.\/)+/#blog"]');
 let showWork = true;
 
 $(function() {
 	filterPosts();
 	smoothScroll(500, prevSelection);
+	// workBelt(showWork);
 	navbar();
-  navSelectionScroll(prevSelection);
+	// workLoad();
+	// clientStuff();
+	// clientsBubbleClick();
+	// setInterval(function(){blogTada()}, 4000 );
+	// startBlog();
+	// startClients();
+	// hideYTButton();
 	navSelectionScroll(prevSelection, wordStuffOnYoutubeScroll);
+
+	// This function takes in a function and the timeout duration in miliseconds.
+	if (clientStuffInterval) {
+		setInterval(function() {$('.client-control-next').click()}, 10000);
+	}
+
+	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
+	$(".biglink").fitText(1.5);
+
+	$('textarea').autosize();
 });
+
+$(window).scroll(function(){
+	youtubeVidScroll();
+});
+
+function youtubeVidScroll(){
+	var wScroll = $(window).scrollTop();
+	$('.video-strip').css('background-position','center -'+ wScroll + 'px');
+}
 
 function startNav() {
 	$('.header-position').addClass('lift-nav');
@@ -23,9 +49,29 @@ $(window).on('scrollend', function(){
   endNav();
 });
 
+$(window).on('scrollsnapchange', function(){
+  endNav();
+});
+
+
 $(window).scroll(function(){
+	// startClients();
+	navSelectionScroll(prevSelection);
 	startNav();
 });
+
+// function startClients() {
+// 		var wScroll = $(window).scrollTop();
+// 		if($('#reviews').offset().top - 700 < wScroll) {
+// 			if ($(window).width() > 680) {
+// 				$('.faces').addClass('launched');
+// 			} else {
+// 				clientNarrowStart();
+// 			}
+// 			// setTimeout()function;
+// 		}
+// }
+
 
 function filterPosts() {
 	let value = '';
@@ -62,32 +108,89 @@ function filterPosts() {
 	});
 }
 
+function clientsBubbleClick() {
+	// .on() is more efficient than click(), it essential triggers all the all
+	// the items or something to that extand.
+	$('.face').on('click', function() {
+		var $this = $(this),
+			faceTop = $this.position().top,
+			vertMath = -1 * (faceTop - 220),
+			faceLeft = $this.position().left,
+			horMath = 0 - faceLeft;
 
-// Initialize a new Lenis instance for smooth scrolling
-const lenis = new Lenis();
+		if ($(window).width() > 680) {
+			$this.parent().css('top', + vertMath + 'px');
+		} else {
+			if ($this.hasClass('back-btn')) {
+				clientNarrowStart();
+			} else {
+				$this.parent().css('left', + horMath + 'px');
+			}
+		}
+		if (!$this.hasClass('back-btn')) {
+			$this.addClass('has-bubble-open')
+				.siblings().removeClass('has-bubble-open');
+		}
+	});
 
-// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-lenis.on('scroll', ScrollTrigger.update);
+	// When I click a face
+	// Get the distance of the face from its parent
+	// Move the whole container up by 115px + the count
+	// Add the is-open class rto the face, pop the ballon
+}
 
-// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-// This ensures Lenis's smooth scroll animation updates on each GSAP tick
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+function clientNarrowStart() {
+	$('.faces').css({
+		'top': '280px',
+		'left': '0px',
+	});
+
+	$('.face').first().addClass('has-bubble-open')
+		.siblings().removeClass('has-bubble-open');
+}
+
+
+function hideYTButton() {
+	$('.flex-video').on('click', function(event) {
+		$(this).addClass('hide-after');
+	});
+}
+
+function clientWideStart() {
+	$('.faces').css({
+		'top': '0px',
+		'left': '0px',
+	});
+
+	$('.face:nth-child(3)').first().addClass('has-bubble-open')
+		.siblings().removeClass('has-bubble-open');
+}
+
+$(window).resize(function() {
+	if ($(window).width() < 680) {
+		clientNarrowStart();
+	} else {
+		clientWideStart();
+	}
+	// ScrollTrigger.refresh(true);
 });
 
-// Disable lag smoothing in GSAP to prevent any delay in scroll animations
-gsap.ticker.lagSmoothing(0);
 
 function navSelectionScroll (prevSelection) {
-  $('a[href^="#"').find('div').removeClass('toggle-arrow');
-  $('a[href^="#blog"').find('div').addClass('toggle-arrow');
-  $('a[href^="#blog"').addClass('toggle-section');
+	var wScroll = $(window).scrollTop();
+
+	// $('a[href^="(\.\.\/)+/#about"]').find('div').removeClass('toggle-arrow');
+	// $('a[href^="(\.\.\/)+/#about"]').removeClass('toggle-section');
+
+	$('a[href=""]').find('div').addClass('toggle-arrow');
+	$('a[href=""]').addClass('toggle-section');
+
 }
 
 // smoothScroll function is applied from the document ready function
 function smoothScroll (duration, prevSelection) {
-	$('a[href^="#"]').on('click', function(event) {
-			prevSelection.find('div').removeClass('toggle-arrow');
+	$('a[href^="(\.\.\/)+/#about"]').on('click', function(event) {
+			// prevSelection.find('div').removeClass('toggle-arrow');
 			prevSelection.removeClass('toggle-section');
 
 	    var target = $( $(this).attr('href') );
@@ -115,6 +218,36 @@ function smoothScroll (duration, prevSelection) {
 	});
 }
 
+
+
+//
+// function blogTada() {
+// 	var randNum = Math.floor(Math.random() * $('.article-thumb').length) + 1
+//
+// 	$('.article-thumb').eq(randNum).addClass('is-emp')
+// 		.siblings().removeClass('is-emp');
+// }
+//
+// function startBlog(wordStuffOnScroll) {
+// 	var wScroll = $(window).scrollTop();
+//
+// 	if ($('../#blog').offset().top - $(window).height() / 2 - 500 < wScroll) {
+// 		if (wordStuffOnScroll) {
+// 			wordStuff();
+// 		}
+//
+// 		$('.article-thumb').each(function(i) {
+// 			setTimeout(function(){$('.article-thumb').eq(i).addClass('is-visible')}, 200 * i);
+// 		});
+// 	}
+// }
+
+function openResume() {
+    window.open('./assets/js/Simphiwe_Madi_CV.pdf', '_blank');
+}
+
+var isOpen = false;
+
 function navbar() {
 	$(".mobile-nav-toggle").click(function() {
 		$(".mobile-header-position").hasClass("is-open") ? isOpen = true : isOpen = false;
@@ -130,6 +263,134 @@ function navbar() {
 	});
 
 }
+
+// function workBelt() {
+// 	var target = $( $('a[href^="../#work"').attr('href') );
+// 	let height = window.innerHeight;
+//
+//   $(".trigger").remove();
+//   $(".return").remove();
+//
+//   $('.thumb-container label').click(function() {
+//     $('.work-belt').addClass("slided");
+// 		$('#work').addClass("change-size");
+//     $('.work-container').show();
+// 		$('.thumb-container').css({
+// 			'display': 'none'
+// 		});
+// 		if ($(window).width() > 680) {
+// 			$('html, body').animate({
+// 					scrollTop: target.offset().top
+// 			}, 500);
+// 		} else {
+// 			$('html, body').animate({
+// 					scrollTop: target.offset().top - 100
+// 			}, 500);
+// 		}
+// 		showWork = true;
+//   });
+//
+//   $('.work-return').click(function() {
+// 		showWork = false;
+// 		$('html, body').animate({
+// 				scrollTop: target.offset().top - (height * 30) / 100
+// 		}, 300);
+// 		$('.thumb-container').css({
+// 			'display': 'inline-flex'
+// 		});
+//     $('.work-belt').removeClass("slided");
+//     $('.work-container').hide(800);
+//   });
+//
+// }
+
+
+function  workLoad() {
+
+  $.ajaxSetup({ cache: true });
+
+  $('.thumb-container label').click(function() {
+    var $this = $(this),
+        newTitle = $this.find('strong').text(),
+        spinner = '<div class="loader">Loading...</div>',
+        url = $this.find('.thumb-unit').data('url');
+
+    $('.project-load').html(spinner).load(url);
+    $('.project-title').text(newTitle);
+  });
+
+}
+
+function clientStuff() {
+
+  $('.client-logo, .client-button').click(function() {
+    var $this = $(this),
+        position = $this.parent().children().index($this);
+
+    $('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
+		$('.bubble').removeClass('active-client').eq(position).addClass('active-client');
+		$('.face').removeClass('active-client').eq(position).addClass('active-client');
+    $('.client-logo').removeClass('active-client').eq(position).addClass('active-client');
+    $('.client-button').removeClass('active-client').eq(position).addClass('active-client');
+  });
+
+  $('.client-control-next, .client-control-prev').click(function() {
+
+		clientStuffInterval = false;
+
+    var $this = $(this),
+        curActiveClient = $('.clients-belt').find('.active-client'),
+        position = $('.clients-belt').children().index(curActiveClient),
+        clientNum = $('.client-unit').length;
+
+      if($this.hasClass('client-control-next')) {
+
+        if(position < clientNum -1){
+          $('.active-client').removeClass('active-client').next().addClass('active-client');
+        } else {
+          $('.client-unit').removeClass('active-client').first().addClass('active-client');
+					$('.bubble').removeClass('active-client').first().addClass('active-client');
+					$('.face').removeClass('active-client').first().addClass('active-client');
+          $('.client-logo').removeClass('active-client').first().addClass('active-client');
+          $('.client-button').removeClass('active-client').first().addClass('active-client');
+        }
+
+      } else {
+				var position = 3
+
+        if (position === 3) {
+          $('.client-unit').removeClass('active-client').last().addClass('active-client');
+					$('.bubble').removeClass('active-client').last().addClass('active-client');
+					$('.face').removeClass('active-client').last().addClass('active-client');
+					$('.client-content').removeClass('active-client').last().addClass('active-client');
+          $('.client-logo').removeClass('active-client').last().addClass('active-client');
+          $('.client-button').removeClass('active-client').last().addClass('active-client');
+        } else {
+          $('.active-client').removeClass('active-client').prev().addClass('active-client');
+        }
+
+      }
+
+
+  });
+
+}
+
+
+// Initialize a new Lenis instance for smooth scrolling
+const lenis = new Lenis();
+
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
+
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);
 
 
 $(document).ready(function() {

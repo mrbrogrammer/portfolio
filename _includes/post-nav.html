@@ -6,12 +6,19 @@
       sm
     </a>
 
+    <!-- <div class="signature">
+      <span class="i">S</span>
+      <span class="j">imphiwe</span>
+      <span class="i">M</span>
+      <span class="k">adi</span>
+    </div> -->
+
     <nav class="site-nav">
 
       {% for item in site.data.settings.menu %}
       <ul>
         <li>
-          <a href="{% if item.url != '#blog' %}../{{ item.url }}{% endif %}">
+          <a href="{% if item.url != '#blog' %}../../../../{{ item.url }}{% endif %}">
             <div class="{% if forloop.index == 3 %}toggle-arrow{% endif %}"></div>
             {{ item.name }}
           </a>
