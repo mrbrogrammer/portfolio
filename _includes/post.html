@@ -1,0 +1,18 @@
+<section id="post">
+  <div class="flex flex--center">
+    <div class="col-50">
+      <article class="post-wrap">
+        <div style="background-image: url({{ site.github.url }}/assets/img/posts/thumbnails/{{page.thumbnail}});" class="post-thumb"></div>
+        <header class="post-header">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <p class="post-meta">
+            <time>{{ page.date }}</time>
+          </p>
+        </header>
+        <div class="post-content">
+          {{ content }}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

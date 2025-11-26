@@ -246,9 +246,6 @@ function smoothScroll (duration, prevSelection) {
 	});
 }
 
-
-
-
 function blogTada() {
 	var randNum = Math.floor(Math.random() * $('.article-thumb').length) + 1
 

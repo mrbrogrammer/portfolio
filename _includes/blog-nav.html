@@ -39,3 +39,24 @@
   </div>
 
 </header>
+
+<div class="mobile-header-position">
+
+  <nav class="mobile-nav">
+    {% for item in site.data.settings.menu %}
+    <ul>
+      <li>
+        <a href="{% if item.url != '#blog' %}../{{ item.url }}{% endif %}">
+          <div class="{% if forloop.index == 3 %}toggle-arrow{% endif %}"></div>
+          {{ item.name }}
+        </a>
+      </li>
+    </ul>
+    {% endfor %}
+  </nav>
+  <div class="social-links">
+    {% for link in site.data.settings.social %}
+      <a href="{{ link.link }}" class="icon-{{ link.icon }}"></a>
+    {% endfor %}
+  </div>
+</div>

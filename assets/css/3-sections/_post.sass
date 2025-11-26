@@ -1,20 +1,23 @@
-.page-content
+#post
+  flex: 1
+  background-color: white
   margin-left: 160px
-  padding: 30px 0
 
-  .wrapper
-    max-width: -webkit-calc(800px - (30px * 2))
-    max-width: calc(800px - (30px * 2))
-    margin-right: auto
-    margin-left: auto
-    padding-right: 10px
-    padding-left: 10px
+  .col-50
+    margin-top: 80px
+
+
+  .post-wrap
+    // +clearfix
+    display: list-item
+    position: relative
+    width: 100%
 
   .post-header
+    display: block
     margin-bottom: 30px
     background-color: white
-    display: block
-    width: 100%
+    min-width: 100%
 
     .post-title
       font-size: 42px
@@ -27,9 +30,10 @@
 
   .post-content
     margin-bottom: 30px
-    counter-reset: section
 
 @media(max-width: 680px)
-  .page-content
-    margin-top: 50px
+  #post
     margin-left: 0
+
+    .col-50
+      margin-top: 112px
