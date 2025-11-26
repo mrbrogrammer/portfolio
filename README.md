@@ -1,4 +1,4 @@
-# Simphiwe Madi — Portfolio (Jekyll)
+# Simphiwe Madi — Portfolio
 
 A simple, minimal portfolio website built with Jekyll, Ruby, HTML5, SASS, CSS, JavaScript, and Liquid. This repository hosts the source for Simphiwe Madi — a Software Developer with 2+ years of experience. Top skills: Java, Spring Boot, React. Passionate about learning and experimenting, with a background in creative fields like photography and videography.
 
