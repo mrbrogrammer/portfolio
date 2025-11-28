@@ -204,11 +204,11 @@ function navSelectionScroll (prevSelection) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
 		$('a[href^="#about"').find('div').addClass('toggle-arrow');
 		$('a[href^="#about"').addClass('toggle-section');
-	} else if ($('#notes').offset().top - 500 < wScroll && $('#notes').offset().top - 400 > wScroll) {
+	} else if ($('#notes').offset().top - 500 < wScroll && $('#notes').offset().top - 100 > wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
 		$('a[href^="#notes"').find('div').addClass('toggle-arrow');
 		$('a[href^="#notes"').addClass('toggle-section');
-	} else if ($('#notes').offset().top - 400 < wScroll) {
+	} else if ($('#notes').offset().top - 100 < wScroll) {
 		$('a[href^="#"').find('div').removeClass('toggle-arrow');
 		$('a[href^="#contact"').find('div').addClass('toggle-arrow');
 		$('a[href^="#contact"').addClass('toggle-section');
