@@ -5,13 +5,13 @@
     <div class="col-1">
       <ul class="faces">
         {% for client in site.data.settings.clients %}
-        <li class="face {% if forloop.index == 3 %}has-bubble-open{% endif %}" style="background-image: url({{ site.github.url }}/assets/img/clients/{{ client.avatar }});">
-          <div class="bubble {% if forloop.index == 3 %}has-bubble-open{% endif %}">
-            <div class="client-quote-mark">{% include icons/icon-quote-mark.html %}</div>
-              {{ client.quote }}
-            <div class="face-info"> - {{client.name}}, {{client.title}}, {{client.company}}</div>
-          </div>
-        </li>
+          <li class="face" style="background-image: url({{ site.github.url }}/assets/img/clients/{{ client.avatar }});">
+            <div class="bubble {% if forloop.index == 3 %}has-bubble-open{% endif %}">
+              <div class="client-quote-mark">{% include icons/icon-quote-mark.html %}</div>
+                {{ client.quote }}
+              <div class="face-info"> - {{client.name}}, {{client.title}}, {{client.company}}</div>
+            </div>
+          </li>
         {% endfor %}
         <li class="back-btn face">
         </li>

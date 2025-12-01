@@ -71,6 +71,12 @@ function startClients() {
 				clientNarrowStart();
 			}
 			// setTimeout()function;
+
+
+			// console.log(clients[2]);
+			$($('.faces').children()[2]).addClass('has-bubble-open');
+			// console.log(clients[2].children());
+
 		}
 }
 
