@@ -70,13 +70,10 @@ function startClients() {
 			} else {
 				clientNarrowStart();
 			}
-			// setTimeout()function;
-
-
-			// console.log(clients[2]);
-			$($('.faces').children()[2]).addClass('has-bubble-open');
-			// console.log(clients[2].children());
-
+			setTimeout(function() {
+				$($('.faces').children()[2]).addClass('has-bubble-open');},
+				500
+			 );
 		}
 }
 
