@@ -67,13 +67,13 @@ function startClients() {
 		if($('#reviews').offset().top - 700 < wScroll) {
 			if ($(window).width() > 680) {
 				$('.faces').addClass('launched');
+				setTimeout(function() {
+					$($('.faces').children()[2]).addClass('has-bubble-open');},
+					500
+			 	);
 			} else {
 				clientNarrowStart();
 			}
-			setTimeout(function() {
-				$($('.faces').children()[2]).addClass('has-bubble-open');},
-				500
-			 );
 		}
 }
 
