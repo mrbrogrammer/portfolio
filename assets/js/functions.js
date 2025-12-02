@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 					}
 				})
 
-				document.querySelectorAll("label").forEach((unit) => {
+				document.querySelectorAll('label[for^="proj-"]').forEach((unit) => {
 					gsap.from(unit, {
 						x: 100,
 						duration: 0.8,
